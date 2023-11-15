@@ -46,7 +46,7 @@ function getTotalX(a, b) {
     console.log("PGCD not found")
   }
 }
-getTotalX([2, 6], [24, 36])
+getTotalX([3, 7], [12, 24, 36])
 
 function getPgcd(couples){
   if(couples.length === 0){
@@ -67,6 +67,7 @@ function getPgcd(couples){
     returnMostFrequentValueFromArray(allResults)
   }
 }
+
 function calculatePgcd(couple){
   if(couple[0] > couple[1]) {
     couple.sort((a, b) => a - b )
@@ -77,7 +78,7 @@ function calculatePgcd(couple){
     if(diff > couple[0]){
       diff = diff - couple[0];
     }
-    else{
+    if(diff < couple[0]){
       couple[0] = couple[0] - diff;
     }
     if(diff === couple[0]){
@@ -86,23 +87,25 @@ function calculatePgcd(couple){
     }
   }
 }
+
 function makeAllCouplePossible(arr){
   let couples = []
   let a;
   let b;
   let couple;
   arr.forEach(element => {
-      for(let i=0; i<arr.length; i++){
-        a = element;
-        b = arr[i]
-        if(a !== b){
-          couple = [a, b];
-          couples.push(couple)
-        }
+    for(let i=0; i<arr.length; i++){
+      a = element;
+      b = arr[i]
+      if(a !== b){
+        couple = [a, b];
+        couples.push(couple)
       }
+    }
   })
   getPgcd(couples)
 }
+
 function returnMostFrequentValueFromArray(arr){
   let toto;
   let array = []

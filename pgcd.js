@@ -23,7 +23,7 @@ function getPgcdFactor(PGCD, a){
         arrayFactors.push(interger);
       }
     })
-    message = `${PGCD} is not factor of integers : ${a.join(', ')}`
+    message = `${PGCD} is not factor of ${ a.length > 1 ? "integers" : "integer"} : ${a.join(', ')}`
     return arrayFactors.length > 0 ? arrayFactors : message
   }
   else{
@@ -63,7 +63,7 @@ function getTotalX(a, b) {
     console.log("The number of integers must be between 1 and 3 : ]1, 3]")
   }
 }
-getTotalX([20, 18], [12, 24, 36])
+getTotalX([0, 16], [1, 2, 3])
 
 function getPgcd(couples){
   if(couples.length === 0){

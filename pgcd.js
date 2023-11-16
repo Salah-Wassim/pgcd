@@ -14,39 +14,44 @@ function chooseWay(arr){
   }
 }
 function getTotalX(a, b) {
-  const bCopy = b.slice();
-  const PGCD = chooseWay(bCopy)
-  let allDividers=[];
-  let factors=[];
-  if(PGCD){
-    for(let i=0; i<=PGCD; i++){
-      if(PGCD%i === 0){
-        allDividers.push(i)
+  if(b && b.length > 1 && b.length <= 3){
+    const bCopy = b.slice();
+    const PGCD = chooseWay(bCopy)
+    let allDividers=[];
+    let factors=[];
+    if(PGCD){
+      for(let i=0; i<=PGCD; i++){
+        if(PGCD%i === 0){
+          allDividers.push(i)
+        }
       }
-    }
-    const combineArray = [...a, ...b]
-    combineArray.forEach(interger => {
-      if(PGCD%interger === 0){
-        factors.push(interger);
+      const combineArray = [...a, ...b]
+      combineArray.forEach(interger => {
+        if(PGCD%interger === 0){
+          factors.push(interger);
+        }
+      })
+      factors = factors.filter(result => result > 0);
+      const resultObj = {
+        "pgcd" : PGCD,
+        "dividers" : allDividers,
+        "factors" : factors
       }
-    })
-    factors = factors.filter(result => result > 0);
-    const resultObj = {
-      "pgcd" : PGCD,
-      "dividers" : allDividers,
-      "factors" : factors
+      console.log(
+        "PGCD : ", resultObj.pgcd,
+        "\nPGCD divisors :", resultObj.dividers.join(", "), 
+        "\nPGCD is a factor of : ", resultObj.factors.join(', ')
+      )
     }
-    console.log(
-      "PGCD : ", resultObj.pgcd,
-      "\nPGCD divisors :", resultObj.dividers.join(", "), 
-      "\nPGCD is a factor of : ", resultObj.factors.join(', ')
-    )
+    else{
+      console.log("Oups :( Une erreur s'est produite lors du calcul du PGCD")
+    }
   }
   else{
-    console.log("PGCD not found")
+    console.log("Le nombre d'entier doit-être compris entre 1 et 3 : ]1, 3]")
   }
 }
-getTotalX([3, 7], [12, 24, 36])
+getTotalX([3, 7], [1, 3, 5])
 
 function getPgcd(couples){
   if(couples.length === 0){

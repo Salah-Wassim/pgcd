@@ -56,11 +56,11 @@ function getTotalX(a, b) {
       )
     }
     else{
-      console.log("Oups :( Une erreur s'est produite lors du calcul du PGCD")
+      console.log("Oops :( An error occurred when calculating the PGCD")
     }
   }
   else{
-    console.log("Le nombre d'entier doit-être compris entre 1 et 3 : ]1, 3]")
+    console.log("The number of integers must be between 1 and 3 : ]1, 3]")
   }
 }
 getTotalX([20, 18], [12, 24, 36])

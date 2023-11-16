@@ -13,34 +13,46 @@ function chooseWay(arr){
     return getPgcd(arr);
   }
 }
+
+function getPgcdFactor(PGCD, a){
+  let arrayFactors = []
+  let message
+  if(a && a.length > 0){
+    a.forEach(interger => {
+      if(PGCD%interger === 0){
+        arrayFactors.push(interger);
+      }
+    })
+    message = `${PGCD} is not factor of integers : ${a.join(', ')}`
+    return arrayFactors.length > 0 ? arrayFactors : message
+  }
+  else{
+    message = `No integers have been entered`
+    return message
+  }
+}
+
 function getTotalX(a, b) {
   if(b && b.length > 1 && b.length <= 3){
     const bCopy = b.slice();
     const PGCD = chooseWay(bCopy)
     let allDividers=[];
-    let factors=[];
     if(PGCD){
       for(let i=0; i<=PGCD; i++){
         if(PGCD%i === 0){
           allDividers.push(i)
         }
       }
-      const combineArray = [...a, ...b]
-      combineArray.forEach(interger => {
-        if(PGCD%interger === 0){
-          factors.push(interger);
-        }
-      })
-      factors = factors.filter(result => result > 0);
+      const factors = getPgcdFactor(PGCD, a);
       const resultObj = {
         "pgcd" : PGCD,
         "dividers" : allDividers,
-        "factors" : factors
+        "factors" : Array.isArray(factors) ? factors.join(', ') : factors
       }
       console.log(
         "PGCD : ", resultObj.pgcd,
         "\nPGCD divisors :", resultObj.dividers.join(", "), 
-        "\nPGCD is a factor of : ", resultObj.factors.join(', ')
+        "\nPGCD is factor of : ", resultObj.factors
       )
     }
     else{
@@ -51,7 +63,7 @@ function getTotalX(a, b) {
     console.log("Le nombre d'entier doit-être compris entre 1 et 3 : ]1, 3]")
   }
 }
-getTotalX([3, 7], [1, 3, 5])
+getTotalX([20, 18], [12, 24, 36])
 
 function getPgcd(couples){
   if(couples.length === 0){

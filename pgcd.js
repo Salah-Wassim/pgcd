@@ -2,6 +2,7 @@
 // Trouver tous les diviseurs du PGCD
 // Vérifier si le PGCD est facteur des entiers contenus dans le tableau a et b
 let pgcd;
+let message
 let diff;
 let allResults = [];
 function chooseWay(arr){
@@ -16,7 +17,6 @@ function chooseWay(arr){
 
 function getPgcdFactor(PGCD, a){
   let arrayFactors = []
-  let message
   if(a && a.length > 0){
     a.forEach(interger => {
       if(PGCD%interger === 0){
@@ -34,7 +34,6 @@ function getPgcdFactor(PGCD, a){
 
 function getPgcdDivisors(PGCD){
   let arrayDivisors=[];
-  let message;
   for(let i=0; i<=PGCD; i++){
     if(PGCD%i === 0){
       arrayDivisors.push(i)
@@ -70,7 +69,7 @@ function displayResult(a, b) {
     console.log("The number of integers must be between 1 and 3 : ]1, 3]")
   }
 }
-displayResult([0, 16], [12, 36])
+displayResult([0], [1, 2, 3])
 
 function getPgcd(couples){
   if(couples.length === 0){
@@ -92,22 +91,37 @@ function getPgcd(couples){
   }
 }
 
+function integersIsEqual(couple){
+  const isEqual = couple.reduce((acc, num) => {
+    if(acc == num){
+      return true
+    }
+    return acc
+  })
+  return isEqual
+}
+
 function calculatePgcd(couple){
   if(couple[0] > couple[1]) {
     couple.sort((a, b) => a - b )
   }
-  diff = couple[1] - couple[0];
-  let isRunning = true;
-  while(isRunning){
-    if(diff > couple[0]){
-      diff = diff - couple[0];
-    }
-    if(diff < couple[0]){
-      couple[0] = couple[0] - diff;
-    }
-    if(diff === couple[0]){
-      allResults.push(diff)
-      isRunning = false
+  if(integersIsEqual(couple)){
+    allResults.push(couple[0])
+  }
+  else{
+    diff = couple[1] - couple[0];
+    let isRunning = true;
+    while(isRunning){
+      if(diff > couple[0]){
+        diff = diff - couple[0];
+      }
+      if(diff < couple[0]){
+        couple[0] = couple[0] - diff;
+      }
+      if(diff === couple[0]){
+        allResults.push(diff)
+        isRunning = false
+      }
     }
   }
 }
@@ -117,17 +131,22 @@ function makeAllCouplePossible(arr){
   let a;
   let b;
   let couple;
-  arr.forEach(element => {
-    for(let i=0; i<arr.length; i++){
-      a = element;
-      b = arr[i]
-      if(a !== b){
-        couple = [a, b];
-        couples.push(couple)
+  if(!integersIsEqual(arr)){
+    arr.forEach(element => {
+      for(let i=0; i<arr.length; i++){
+        a = element;
+        b = arr[i]
+        if(a !== b){
+          couple = [a, b];
+          couples.push(couple)
+        }
       }
-    }
-  })
-  getPgcd(couples)
+    })
+    getPgcd(couples)
+  }
+  else{
+    pgcd = arr[0]
+  }
 }
 
 function returnMostFrequentValueFromArray(arr){

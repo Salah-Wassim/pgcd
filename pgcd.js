@@ -4,7 +4,9 @@
 let pgcd;
 let message
 let diff;
+let notIntegers = [];
 let allResults = [];
+
 function chooseWay(arr){
   if(arr.length > 2){
     makeAllCouplePossible(arr)
@@ -43,33 +45,50 @@ function getPgcdDivisors(PGCD){
   return arrayDivisors.length > 0 ? arrayDivisors : message
 }
 
+function verifyIntegersInArray(a, b) {
+  const combineArray = [...a, ...b];
+  let hasNonInteger = false;
+  combineArray.forEach((value) => {
+    if (isNaN(value) || !Number.isInteger(value)) {
+      notIntegers.push(value);
+      hasNonInteger = true;
+    }
+  });
+  return !hasNonInteger;
+}
+
 function displayResult(a, b) {
-  if(b && b.length > 1 && b.length <= 3){
-    const bCopy = b.slice();
-    const PGCD = chooseWay(bCopy)
-    if(PGCD){
-      const factors = getPgcdFactor(PGCD, a);
-      const divisors = getPgcdDivisors(PGCD)
-      const resultObj = {
-        "pgcd" : PGCD,
-        "divisors" : Array.isArray(divisors) ? divisors.join(', ') : divisors,
-        "factors" : Array.isArray(factors) ? factors.join(', ') : factors
+  if(verifyIntegersInArray(a, b)){
+    if(b && b.length > 1 && b.length <= 3){
+      const bCopy = b.slice();
+      const PGCD = chooseWay(bCopy)
+      if(PGCD){
+        const factors = getPgcdFactor(PGCD, a);
+        const divisors = getPgcdDivisors(PGCD)
+        const resultObj = {
+          "pgcd" : PGCD,
+          "divisors" : Array.isArray(divisors) ? divisors.join(', ') : divisors,
+          "factors" : Array.isArray(factors) ? factors.join(', ') : factors
+        }
+        console.log(
+          "PGCD : ", resultObj.pgcd,
+          "\nPGCD divisors :", resultObj.divisors, 
+          "\nPGCD is factor of : ", resultObj.factors
+        )
       }
-      console.log(
-        "PGCD : ", resultObj.pgcd,
-        "\nPGCD divisors :", resultObj.divisors, 
-        "\nPGCD is factor of : ", resultObj.factors
-      )
+      else{
+        console.log("Oops :( An error occurred when calculating the PGCD")
+      }
     }
     else{
-      console.log("Oops :( An error occurred when calculating the PGCD")
+      console.log("The number of integers must be between 1 and 3 : ]1, 3]")
     }
   }
   else{
-    console.log("The number of integers must be between 1 and 3 : ]1, 3]")
+    console.log(`Oups ! "${notIntegers.join(", ")}" ${notIntegers.length > 1 ? "are not integers !" : "is not a whole number !"}`);
   }
 }
-displayResult([0], [1, 2, 3])
+displayResult([1], [1, 2, 3])
 
 function getPgcd(couples){
   if(couples.length === 0){

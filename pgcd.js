@@ -32,26 +32,33 @@ function getPgcdFactor(PGCD, a){
   }
 }
 
-function getTotalX(a, b) {
+function getPgcdDivisors(PGCD){
+  let arrayDivisors=[];
+  let message;
+  for(let i=0; i<=PGCD; i++){
+    if(PGCD%i === 0){
+      arrayDivisors.push(i)
+    }
+  }
+  message = `No common divisors have been found for ${PGCD}`
+  return arrayDivisors.length > 0 ? arrayDivisors : message
+}
+
+function displayResult(a, b) {
   if(b && b.length > 1 && b.length <= 3){
     const bCopy = b.slice();
     const PGCD = chooseWay(bCopy)
-    let allDividers=[];
     if(PGCD){
-      for(let i=0; i<=PGCD; i++){
-        if(PGCD%i === 0){
-          allDividers.push(i)
-        }
-      }
       const factors = getPgcdFactor(PGCD, a);
+      const divisors = getPgcdDivisors(PGCD)
       const resultObj = {
         "pgcd" : PGCD,
-        "dividers" : allDividers,
+        "divisors" : Array.isArray(divisors) ? divisors.join(', ') : divisors,
         "factors" : Array.isArray(factors) ? factors.join(', ') : factors
       }
       console.log(
         "PGCD : ", resultObj.pgcd,
-        "\nPGCD divisors :", resultObj.dividers.join(", "), 
+        "\nPGCD divisors :", resultObj.divisors, 
         "\nPGCD is factor of : ", resultObj.factors
       )
     }
@@ -63,7 +70,7 @@ function getTotalX(a, b) {
     console.log("The number of integers must be between 1 and 3 : ]1, 3]")
   }
 }
-getTotalX([0, 16], [1, 2, 3])
+displayResult([0, 16], [12, 36])
 
 function getPgcd(couples){
   if(couples.length === 0){

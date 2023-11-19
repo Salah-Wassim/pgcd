@@ -1,4 +1,5 @@
-Ce code permet de :
- - Trouver le PGCD pour les entiers du tableau b 
- - Trouver tous les diviseurs du PGCD
- - Vérifier si le PGCD est facteur des entiers contenus dans le tableau a
+This code allows you to :
+
+ - Find the PGCD for the integers in table b
+ - Find all PGCD divisors
+ - Check whether the PGCD is a factor of the integers contained in table a

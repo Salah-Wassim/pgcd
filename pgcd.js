@@ -1,6 +1,3 @@
-// Trouver le PGCD pour les entiers du tableau b 
-// Trouver tous les diviseurs du PGCD
-// Vérifier si le PGCD est facteur des entiers contenus dans le tableau a et b
 let pgcd;
 let message
 let diff;
@@ -88,7 +85,7 @@ function displayResult(a, b) {
     console.log(`Oups ! "${notIntegers.join(", ")}" ${notIntegers.length > 1 ? "are not integers !" : "is not a whole number !"}`);
   }
 }
-displayResult([1], [1, 2, 3])
+displayResult([2, 10], [11, 24, 36])
 
 function getPgcd(couples){
   if(couples.length === 0){
@@ -169,18 +166,24 @@ function makeAllCouplePossible(arr){
 }
 
 function returnMostFrequentValueFromArray(arr){
-  let toto;
-  let array = []
-  arr.sort((a, b) => a - b)
-  arr.forEach((element) => {
-    toto = arr.reduce((acc, num) => {
-      if(num === element){
-        acc.count ++
-      }
-      return acc
-    }, {count : 0, value : element});
-    array.push(toto);
-  })
-  const result = array.find(({count}) => count === Math.max(count));
-  pgcd = result.value
+  if(arr.length === 0){
+    return false
+  }
+
+  const counts = arr.reduce((acc, value) => {
+    acc[value] = (acc[value] || 0) + 1;
+    return acc;
+  }, {});
+
+  let maxCount = 0;
+  let mostFrequentValue = null;
+
+  for(const [value, count] of Object.entries(counts)){
+    if(count > maxCount){
+      maxCount = count;
+      mostFrequentValue = value
+    }
+  }
+  
+  pgcd = mostFrequentValue
 }

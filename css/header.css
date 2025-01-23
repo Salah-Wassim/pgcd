@@ -1,7 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Schoolbell&display=swap');
+
 .header{
     background-color: gainsboro;
 }
 
 .header-content{
     margin:20px;
+}
+
+.avatar-and-title-header-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.title-header-container{
+    margin-left: 5px;
+}
+
+.title-header-container > h3{
+    font-family: 'Schoolbell', sans-serif;
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+.avatar-header-container{
+    display: flex;
+    align-items: center;
+    width:44px;
+    height: 44px;
+}
+
+.avatar-header{
+    width:100%;
+    border-radius: 50%;
 }

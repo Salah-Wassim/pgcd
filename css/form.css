@@ -1,10 +1,17 @@
 .form-pgcd{
     margin: 20px 0;
+    padding: 20px;
+    border: 1px solid;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8);
+    background-color: floralwhite;
+}
+
+.form-pgcd-content{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 10px 0;
 }
 
 .input-form-container{margin: 8px 0;}

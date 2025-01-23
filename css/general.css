@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+body {
+  height: 100%; /* Permet au conteneur de s'étendre sur toute la hauteur */
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0 50px;
+}
+
+.main-container{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* S'étend sur toute la hauteur de la fenêtre */
+}
+
+@media screen and (max-width: 600px) {
+  body{
+    margin: 0;
+  }
+}
+
+section{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}

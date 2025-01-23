@@ -1,3 +1,7 @@
+const resultPgcd = document.querySelector(".result-content-pgcd");
+const resultDivisors = document.querySelector(".result-content-divisors");
+const resultFactor = document.querySelector(".result-content-factors");
+
 let pgcd;
 let message
 let diff;
@@ -72,6 +76,9 @@ function displayResult(a, b) {
           "\nPGCD divisors :", resultObj.divisors, 
           "\nPGCD is factor of : ", resultObj.factors
         )
+        resultPgcd.innerHTML = resultObj.pgcd
+        resultDivisors.innerHTML = resultObj.divisors
+        resultFactor.innerHTML = resultObj.factors
       }
       else{
         console.log("Oops :( An error occurred when calculating the PGCD")

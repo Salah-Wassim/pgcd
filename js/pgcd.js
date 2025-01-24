@@ -1,12 +1,50 @@
-const resultPgcd = document.querySelector(".result-content-pgcd");
-const resultDivisors = document.querySelector(".result-content-divisors");
-const resultFactor = document.querySelector(".result-content-factors");
-
 let pgcd;
 let message
 let diff;
 let notIntegers = [];
 let allResults = [];
+
+const resultPgcd = document.querySelector(".result-content-pgcd");
+const resultDivisors = document.querySelector(".result-content-divisors");
+const resultFactor = document.querySelector(".result-content-factors");
+const inputNumbers = document.querySelector(".input-numbers");
+const inputFactors = document.querySelector(".input-factor");
+const btnSubmit = document.querySelector(".btn-submit-pgcd");
+
+btnSubmit.addEventListener('click', function(e){
+  e.preventDefault()
+
+  let inputNumbersValues = inputNumbers.value;
+  let inputFactorsValues = inputFactors.value;
+  let numbers;
+  let factors;
+  let checkNumbersValues;
+  let checkFactorsValues;
+
+  const regex = /\d+(,\d+(\.\d+)?)*/;
+
+  message = "Le format ne correspond pas";
+
+  !regex.test(inputNumbersValues) ? console.log(message) : checkNumbersValues;
+
+  checkNumbersValues = inputNumbersValues ? numbers = inputNumbersValues.split(',') : console.log(message)
+
+  if(inputFactors.type === "text"){
+    !regex.test(inputFactorsValues) ? console.log(message) : checkFactorsValues
+  
+    checkFactorsValues = inputFactorsValues ? factors = inputFactorsValues.split(',') : factors = [];
+  }
+
+  const intNumbers = numbers.map(Number);
+
+  if(factors){
+    const intFactor = factors.map(Number);
+    displayResult(intFactor, intNumbers)
+  }
+  else{
+    displayResult([], intNumbers)
+  }
+})
 
 function chooseWay(arr){
   if(arr.length > 2){
@@ -92,7 +130,7 @@ function displayResult(a, b) {
     console.log(`Oups ! "${notIntegers.join(", ")}" ${notIntegers.length > 1 ? "are not integers !" : "is not a whole number !"}`);
   }
 }
-displayResult([2, 10], [11, 24, 36])
+//displayResult([2, 10], [11, 24, 36])
 
 function getPgcd(couples){
   if(couples.length === 0){

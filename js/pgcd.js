@@ -10,40 +10,59 @@ const resultFactor = document.querySelector(".result-content-factors");
 const inputNumbers = document.querySelector(".input-numbers");
 const inputFactors = document.querySelector(".input-factor");
 const btnSubmit = document.querySelector(".btn-submit-pgcd");
+const messageUser = document.querySelector(".message-user");
+
+function resetAll(){
+  pgcd=null
+  message="";
+  diff=null
+  notIntegers = [];
+  allResults = [];
+}
+
+function handleMessage(message){
+  return messageUser.innerHTML = message
+}
 
 btnSubmit.addEventListener('click', function(e){
   e.preventDefault()
+
+  resetAll()
 
   let inputNumbersValues = inputNumbers.value;
   let inputFactorsValues = inputFactors.value;
   let numbers;
   let factors;
-  let checkNumbersValues;
-  let checkFactorsValues;
 
-  const regex = /\d+(,\d+(\.\d+)?)*/;
+  let regex = /\d+(,\d+(\.\d+)?)*/;
+  //let regex = /^([0-9]+(,[0-9]+)+)$/is;
 
-  message = "Le format ne correspond pas";
-
-  !regex.test(inputNumbersValues) ? console.log(message) : checkNumbersValues;
-
-  checkNumbersValues = inputNumbersValues ? numbers = inputNumbersValues.split(',') : console.log(message)
-
-  if(inputFactors.type === "text"){
-    !regex.test(inputFactorsValues) ? console.log(message) : checkFactorsValues
-  
-    checkFactorsValues = inputFactorsValues ? factors = inputFactorsValues.split(',') : factors = [];
-  }
-
-  const intNumbers = numbers.map(Number);
-
-  if(factors){
-    const intFactor = factors.map(Number);
-    displayResult(intFactor, intNumbers)
+  if(inputNumbersValues){ 
+    regex.test(inputNumbersValues) ? numbers = inputNumbersValues.split(',') : handleMessage("Le format ne correspond pas");
   }
   else{
-    displayResult([], intNumbers)
+    console.log("Ce champ doit être complété");
+    return handleMessage("Ce champ doit être complété")
   }
+
+  if(inputFactors.type === "text"){
+    if(inputFactors){
+      regex.test(inputFactorsValues) ? factors = inputFactorsValues.split(',') : handleMessage("Le format ne correspond pas");
+      console.log(factors)
+    }
+    else{
+      console.log("Ce champ doit être complété");
+      return handleMessage("Ce champ doit être complété")
+    }
+  }
+
+  if(numbers){
+    const intNumbers = numbers.map(Number);
+    const intFactor = factors ? factors.map(Number) : []
+    console.log(intFactor, intNumbers)
+    displayResult(intFactor, intNumbers)
+  }
+  
 })
 
 function chooseWay(arr){
@@ -52,7 +71,9 @@ function chooseWay(arr){
     return pgcd
   }
   else{
-    return getPgcd(arr);
+    getPgcd(arr);
+    pgcd = allResults[0]
+    return pgcd
   }
 }
 
@@ -65,7 +86,7 @@ function getPgcdFactor(PGCD, a){
       }
     })
     message = `${PGCD} is not factor of ${ a.length > 1 ? "integers" : "integer"} : ${a.join(', ')}`
-    return arrayFactors.length > 0 ? arrayFactors : message
+    return arrayFactors.length > 0 ? arrayFactors : message;
   }
   else{
     message = `No integers have been entered`
@@ -81,7 +102,7 @@ function getPgcdDivisors(PGCD){
     }
   }
   message = `No common divisors have been found for ${PGCD}`
-  return arrayDivisors.length > 0 ? arrayDivisors : message
+  return arrayDivisors.length > 0 ? arrayDivisors : handleMessage(message)
 }
 
 function verifyIntegersInArray(a, b) {
@@ -101,6 +122,7 @@ function displayResult(a, b) {
     if(b && b.length > 1 && b.length <= 3){
       const bCopy = b.slice();
       const PGCD = chooseWay(bCopy)
+      console.log(PGCD)
       if(PGCD){
         const factors = getPgcdFactor(PGCD, a);
         const divisors = getPgcdDivisors(PGCD)
@@ -120,14 +142,17 @@ function displayResult(a, b) {
       }
       else{
         console.log("Oops :( An error occurred when calculating the PGCD")
+        handleMessage("Oops :( An error occurred when calculating the PGCD")
       }
     }
     else{
-      console.log("The number of integers must be between 1 and 3 : ]1, 3]")
+      console.log("The number of integers must be between 1 and 3 : ]1, 3]");
+      handleMessage("The number of integers must be between 1 and 3 : ]1, 3]")
     }
   }
   else{
     console.log(`Oups ! "${notIntegers.join(", ")}" ${notIntegers.length > 1 ? "are not integers !" : "is not a whole number !"}`);
+    handleMessage(`Oups ! "${notIntegers.join(", ")}" ${notIntegers.length > 1 ? "are not integers !" : "is not a whole number !"}`)
   }
 }
 //displayResult([2, 10], [11, 24, 36])
@@ -154,10 +179,11 @@ function getPgcd(couples){
 
 function integersIsEqual(couple){
   const isEqual = couple.reduce((acc, num) => {
-    if(acc == num){
+    if(acc === num){
+      console.log("5")
       return true
     }
-    return acc
+    return false
   })
   return isEqual
 }

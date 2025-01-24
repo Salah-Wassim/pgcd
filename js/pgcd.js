@@ -18,6 +18,7 @@ function resetAll(){
   diff=null
   notIntegers = [];
   allResults = [];
+  handleMessage('');
 }
 
 function handleMessage(message){

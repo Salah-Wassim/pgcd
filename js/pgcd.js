@@ -35,8 +35,8 @@ btnSubmit.addEventListener('click', function(e){
   let numbers;
   let factors;
 
-  let regex = /\d+(,\d+(\.\d+)?)*/;
-  //let regex = /^([0-9]+(,[0-9]+)+)$/is;
+  //let regex = /\d+(,\d+(\.\d+)?)*/;
+  let regex = /^([0-9]+(,[0-9]+)+)$/is;
 
   if(inputNumbersValues){ 
     regex.test(inputNumbersValues) ? numbers = inputNumbersValues.split(',') : handleMessage("Le format ne correspond pas");

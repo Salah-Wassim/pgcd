@@ -25,6 +25,15 @@ function handleMessage(message){
   return messageUser.innerHTML = message
 }
 
+function useRegexFactors(input){
+  let regexPattern1 = /([0-9]+(,[0-9]+)+)$/is;
+  let regexPattern2 = /[0-9]+/is;
+  
+  const regex = input.includes(",") ? regexPattern1 : regexPattern2;
+
+  return regex.test(input);
+}
+
 btnSubmit.addEventListener('click', function(e){
   e.preventDefault()
 
@@ -35,7 +44,7 @@ btnSubmit.addEventListener('click', function(e){
   let numbers;
   let factors;
 
-  //let regex = /\d+(,\d+(\.\d+)?)*/;
+  //let regexFactor = /\d+(,\d+(\.\d+)?)*/;
   let regex = /^([0-9]+(,[0-9]+)+)$/is;
 
   if(inputNumbersValues){ 
@@ -47,8 +56,8 @@ btnSubmit.addEventListener('click', function(e){
   }
 
   if(inputFactors.type === "text"){
-    if(inputFactors){
-      regex.test(inputFactorsValues) ? factors = inputFactorsValues.split(',') : handleMessage("Le format ne correspond pas");
+    if(inputFactorsValues){
+      useRegexFactors(inputFactorsValues) ? factors = inputFactorsValues.split(',') : handleMessage("Le format ne correspond pas");
       console.log(factors)
     }
     else{
@@ -79,10 +88,12 @@ function chooseWay(arr){
 }
 
 function getPgcdFactor(PGCD, a){
-  let arrayFactors = []
+  let arrayFactors = [];
+  let moduloEquation;
   if(a && a.length > 0){
     a.forEach(interger => {
-      if(PGCD%interger === 0){
+      moduloEquation = interger > PGCD ? interger%PGCD : PGCD%interger;
+      if(moduloEquation === 0){
         arrayFactors.push(interger);
       }
     })

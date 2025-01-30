@@ -1,12 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Schoolbell&display=swap');
 
 .result-container{
+    display: flex;
+    align-items: center;
     background-color: #000;
     border: 1px solid #000;
     margin-left: 80px;
     border-radius: 6px;
     color: #fff;
     width: 280px;
+    height: 200px;
     padding: 19px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8);
 }
@@ -18,7 +21,7 @@
 .result-content > p{
     font-family: 'Schoolbell', sans-serif;
     margin: 11px 0;
-    font-size: 13px;
+    font-size: 15px;
 }
 
 @media screen and (max-width: 689px){

@@ -37,6 +37,16 @@
     background-color: #f1f1f1;
   }
 
+  .collapsible-content > div{
+    padding: 10px 0;
+  }
+
   .collapsible-content-2{
     margin-bottom: 20px;
+  }
+
+  @media screen and (max-width: 850px){
+    .collapsibles-container{
+        padding:0;
+    }
   }

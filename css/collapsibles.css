@@ -1,3 +1,6 @@
+.collapsibles-container{
+    padding:0 8%;
+}
 .btn-collapsible {
     background-color: #777;
     color: white;

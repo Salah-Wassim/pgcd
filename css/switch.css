@@ -145,3 +145,7 @@
     -webkit-box-shadow: var(--circle-checked-shadow);
     box-shadow: var(--circle-checked-shadow);
 }
+.switch-text-explain{
+    font-size: smaller;
+    font-weight: bold;
+}

@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
         <link rel="stylesheet" href="css/general.css">
         <link rel="stylesheet" href="css/header.css">
         <link rel="stylesheet" href="css/titles.css">
@@ -20,13 +21,21 @@
         <div class="main-container">
             <header class="header">
                 <div class="header-content">
-                    <div class="avatar-and-title-header-container">
-                        <div class="avatar-header-container">   
-                            <img src="assets/PGCD.png" alt="Avatar" class="avatar-header">
+                    <div class="header-left-content">
+                        <div class="avatar-and-title-header-container">
+                            <div class="avatar-header-container">   
+                                <img src="assets/PGCD.png" alt="Avatar" class="avatar-header">
+                            </div>
+                            <div class="title-header-container">
+                                <h3>PGCD</h3>
+                            </div>
                         </div>
-                        <div class="title-header-container">
-                            <h3>PGCD</h3>
-                        </div>
+                        <button class="btn-burger fa-solid fa-bars"></button>
+                    </div>
+                    <div class="header-right-content">
+                        <a href="#a-propos">À propos</a>
+                        <a href="#liens">Liens</a>
+                        <a href="#contact">Contact</a>
                     </div>
                 </div>
             </header>
@@ -120,5 +129,6 @@
         <script type="text/javascript" src="js/switch.js"></script>
         <script type="text/javascript" src="js/collapsibles.js"></script>
         <script type="text/javascript" src="js/paste.js"></script>
+        <script type="text/javascript" src="js/burger.js"></script>
     </body>
 </html>

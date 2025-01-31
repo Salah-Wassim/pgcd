@@ -1,0 +1,64 @@
+.contact {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 70%;
+}
+label {
+    font-weight: bold;
+}
+input, textarea, select, button {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+.btn-contact {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.btn-contact:hover {
+    background-color: #0056b3;
+}
+.confirmation {
+    display: none;
+    color: green;
+    font-weight: bold;
+    margin-top: 10px;
+}
+.contact-info, .faq {
+    margin-top: 30px;
+}
+.contact-info ul, .faq ul {
+    list-style: none;
+    padding: 0;
+}
+.contact-info ul li, .faq ul li {
+    margin-bottom: 10px;
+}
+.contact-info ul li a {
+    color: #007bff;
+    text-decoration: none;
+}
+.contact-info ul li a:hover {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 600px){
+    form {
+        width: 100%;
+    }
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/titles.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="website icon" type="png" href="assets/PGCD.png">
+    <title>PGCD - Contact</title>
+</head>
+<body>
+    <div class="main-container">
+        <header class="header">
+            <div class="header-content">
+                <div class="header-left-content">
+                    <div class="avatar-and-title-header-container">
+                        <div class="avatar-header-container">   
+                            <img src="assets/PGCD.png" alt="Avatar" class="avatar-header">
+                        </div>
+                        <div class="title-header-container">
+                            <h3>PGCD</h3>
+                        </div>
+                    </div>
+                    <button class="btn-burger fa-solid fa-bars"></button>
+                </div>
+                <div class="header-right-content">
+                    <a href="contact.html">Contact</a>
+                    <a href="liens.html">Liens</a>
+                    <a href="a-propos.html">À propos</a>
+                    <a href="pgcd.html">Accueil</a>
+                </div>
+            </div>
+        </header>
+        <div class="titles-container">
+            <h1>Contactez-nous</h1>
+            <h2>Vous avez une question, une suggestion ou simplement envie de partager votre avis sur le site ? Nous sommes à votre écoute !</h2>
+        </div>
+        <section class="contact">
+            <form id="contactForm">
+                <label for="name">Nom :</label>
+                <input type="text" id="name" name="name" placeholder="Votre nom" required>
+    
+                <label for="email">Adresse e-mail :</label>
+                <input type="email" id="email" name="email" placeholder="Votre e-mail" required>
+    
+                <label for="subject">Sujet :</label>
+                <select id="subject" name="subject" required>
+                    <option value="suggestion">Suggestion</option>
+                    <option value="issue">Problème technique</option>
+                    <option value="general">Question générale</option>
+                </select>
+    
+                <label for="message">Message :</label>
+                <textarea id="message" name="message" rows="5" placeholder="Votre message..." required></textarea>
+    
+                <button class="btn-contact" type="submit">Envoyer</button>
+                <p class="confirmation" id="confirmationMessage">Votre message a bien été envoyé !</p>
+            </form>
+            
+            <!-- Autres moyens de contact -->
+            <div class="contact-info">
+                <h2>Autres moyens de contact</h2>
+                <ul>
+                    <li><strong>E-mail :</strong> 👉 <a href="mailto:contact@pgcd.com">contact@pgcd.com</a></li>
+                    <li><strong>Réseaux sociaux :</strong> 👉 <a href="#">Facebook</a>, <a href="#">Twitter</a></li>
+                    <li><strong>GitHub :</strong> 👉 <a href="#">Voir le code source</a></li>
+                </ul>
+            </div>
+    
+            <!-- FAQ -->
+            <div class="faq">
+                <h2>FAQ rapide</h2>
+                <ul>
+                    <li><strong>Q :</strong> Puis-je calculer le PGCD de plus de trois nombres ?<br><strong>R :</strong> Oui, notre outil supporte plusieurs nombres !</li>
+                    <li><strong>Q :</strong> Ce site est-il gratuit ?<br><strong>R :</strong> Absolument, tout est 100% gratuit.</li>
+                    <li><strong>Q :</strong> Puis-je suggérer une amélioration ?<br><strong>R :</strong> Bien sûr ! Utilisez le formulaire ou envoyez un e-mail.</li>
+                </ul>
+            </div>
+        </section>
+        <footer class="footer">
+            <p>&copy; 2025 - pgcd - Tous droits réservés.</p>
+        </footer>
+    </div>
+    <script type="text/javascript" src="js/burger.js"></script>
+</body>
+</html>

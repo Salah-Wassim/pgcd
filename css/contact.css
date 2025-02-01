@@ -4,34 +4,43 @@
     margin: 20px 0;
     padding: 20px;
     background: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /*box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);*/
     border-radius: 8px;
 }
-form {
+.form-contact {
     display: flex;
     flex-direction: column;
     gap: 15px;
     width: 70%;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
 }
-label {
+.form-contact:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8);
+}
+.form-contact > label {
     font-weight: bold;
 }
-input, textarea, select, button {
+.input-form-contact, textarea, select, .btn-form-contact{
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1rem;
 }
-.btn-contact {
-    background-color: #007bff;
+.btn-form-contact {
+    background-color:dimgray;
     color: #fff;
-    border: none;
+    border: 1px solid dimgray;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    font-weight: bold;
+    height: 50px;
 }
-.btn-contact:hover {
-    background-color: #0056b3;
+.btn-form-contact:hover {
+    opacity: 0.8;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8);
 }
 .confirmation {
     display: none;
@@ -56,9 +65,19 @@ input, textarea, select, button {
 .contact-info ul li a:hover {
     text-decoration: underline;
 }
+.message-info-form-contact{
+    color: red;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
 
 @media screen and (max-width: 600px){
     form {
         width: 100%;
+    }
+    .form-contact {
+        width: 100%;
+        padding: 10px;
     }
 }

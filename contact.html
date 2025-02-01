@@ -11,6 +11,14 @@
     <link rel="stylesheet" href="css/footer.css">
     <link rel="website icon" type="png" href="assets/PGCD.png">
     <title>PGCD - Contact</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init({
+              publicKey: "ctYP-_ZXSvcoCyGc8",
+            });
+        })();
+    </script>
 </head>
 <body>
     <div class="main-container">
@@ -58,27 +66,28 @@
                 <textarea id="message" name="message" rows="5" placeholder="Votre message..." required></textarea>
     
                 <button class="btn-contact" type="submit">Envoyer</button>
-                <p class="confirmation" id="confirmationMessage">Votre message a bien été envoyé !</p>
+                <p class="confirmation" id="confirmationMessage"></p>
             </form>
             
-            <!-- Autres moyens de contact -->
-            <div class="contact-info">
-                <h2>Autres moyens de contact</h2>
-                <ul>
-                    <li><strong>E-mail :</strong> 👉 <a href="mailto:contact@pgcd.com">contact@pgcd.com</a></li>
-                    <li><strong>Réseaux sociaux :</strong> 👉 <a href="#">Facebook</a>, <a href="#">Twitter</a></li>
-                    <li><strong>GitHub :</strong> 👉 <a href="#">Voir le code source</a></li>
-                </ul>
-            </div>
-    
-            <!-- FAQ -->
-            <div class="faq">
-                <h2>FAQ rapide</h2>
-                <ul>
-                    <li><strong>Q :</strong> Puis-je calculer le PGCD de plus de trois nombres ?<br><strong>R :</strong> Oui, notre outil supporte plusieurs nombres !</li>
-                    <li><strong>Q :</strong> Ce site est-il gratuit ?<br><strong>R :</strong> Absolument, tout est 100% gratuit.</li>
-                    <li><strong>Q :</strong> Puis-je suggérer une amélioration ?<br><strong>R :</strong> Bien sûr ! Utilisez le formulaire ou envoyez un e-mail.</li>
-                </ul>
+            <div class="contact-faq-containers">
+                <!-- Autres moyens de contact -->
+                <div class="contact-info">
+                    <h2>Autres moyens de contact</h2>
+                    <ul>
+                        <li><strong>Réseaux sociaux :</strong> 👉 <a href="#">Facebook</a>, <a href="#">Twitter</a></li>
+                        <li><strong>GitHub :</strong> 👉 <a href="#">Voir le code source</a></li>
+                    </ul>
+                </div>
+            
+                <!-- FAQ -->
+                <div class="faq">
+                    <h2>FAQ rapide</h2>
+                    <ul>
+                        <li><strong>Q :</strong> Puis-je calculer le PGCD de plus de trois nombres ?<br><strong>R :</strong> Oui, notre outil supporte plusieurs nombres !</li>
+                        <li><strong>Q :</strong> Ce site est-il gratuit ?<br><strong>R :</strong> Absolument, tout est 100% gratuit.</li>
+                        <li><strong>Q :</strong> Puis-je suggérer une amélioration ?<br><strong>R :</strong> Bien sûr ! Utilisez le formulaire ou envoyez un e-mail.</li>
+                    </ul>
+                </div>
             </div>
         </section>
         <footer class="footer">
@@ -86,5 +95,6 @@
         </footer>
     </div>
     <script type="text/javascript" src="js/burger.js"></script>
+    <script type="text/javascript" src="js/contact.js"></script>
 </body>
 </html>

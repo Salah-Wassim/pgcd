@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/header.css">
+        <link rel="stylesheet" href="css/titles.css">
+        <link rel="stylesheet" href="css/form.css">
+        <link rel="stylesheet" href="css/switch.css">
+        <link rel="stylesheet" href="css/result.css">
+        <link rel="stylesheet" href="css/paste-button.css">
+        <link rel="stylesheet" href="css/message.css">
+        <link rel="stylesheet" href="css/collapsibles.css">
+        <link rel="stylesheet" href="css/modal-cgu.css">
+        <link rel="stylesheet" href="css/footer.css">
+        <link rel="website icon" type="png" href="assets/PGCD.png">
+        <title>PGCD</title>
+    </head>
+    <body>
+        <div class="main-container">
+            <header class="header">
+                <div class="header-content">
+                    <div class="header-left-content">
+                        <div class="avatar-and-title-header-container">
+                            <div class="avatar-header-container">   
+                                <img src="assets/PGCD.png" alt="Avatar" class="avatar-header">
+                            </div>
+                            <div class="title-header-container title-header-container-pgcd">
+                                <h3>PGCD</h3>
+                            </div>
+                        </div>
+                        <button class="btn-burger fa-solid fa-bars"></button>
+                    </div>
+                    <div class="header-right-content">
+                        <a href="contact.html">Contact</a>
+                        <a href="liens.html">Liens</a>
+                        <a href="a-propos.html">À propos</a>
+                        <a href="index.html">Accueil</a>
+                    </div>
+                </div>
+            </header>
+            <div class="titles-container">
+                <h1>PGCD</h1>
+                <h2>Calculer le PGCD de deux nombres ? Facile, me direz-vous. Mais qu'en est-il de trois nombres ? C'est justement pour cela que ce site existe !</h2>
+            </div>
+            <section>
+                <form class="form-pgcd">
+                    <div class="form-pgcd-content">
+                        <div class="input-form-container input-numbers-container">
+                            <input class="input-form input-numbers" type="text" placeholder="Eg : 12, 10, 87" pattern="\d+(,\d+(\.\d+)?)*" required>
+                        </div>
+                        <div class="switch-container">
+                            <label class="switch">
+                                <input class="switch-checkbox" type="checkbox">
+                                <div class="slider">
+                                    <div class="circle">
+                                        <svg class="cross" xml:space="preserve" style="enable-background:new 0 0 512 512" viewBox="0 0 365.696 365.696" y="0" x="0" height="6" width="6" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                                            <g>
+                                                <path data-original="#000000" fill="currentColor" d="M243.188 182.86 356.32 69.726c12.5-12.5 12.5-32.766 0-45.247L341.238 9.398c-12.504-12.503-32.77-12.503-45.25 0L182.86 122.528 69.727 9.374c-12.5-12.5-32.766-12.5-45.247 0L9.375 24.457c-12.5 12.504-12.5 32.77 0 45.25l113.152 113.152L9.398 295.99c-12.503 12.503-12.503 32.769 0 45.25L24.48 356.32c12.5 12.5 32.766 12.5 45.247 0l113.132-113.132L295.99 356.32c12.503 12.5 32.769 12.5 45.25 0l15.081-15.082c12.5-12.504 12.5-32.77 0-45.25zm0 0"></path>
+                                            </g>
+                                        </svg>
+                                        <svg class="checkmark" xml:space="preserve" style="enable-background:new 0 0 512 512" viewBox="0 0 24 24" y="0" x="0" height="10" width="10" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                                            <g>
+                                                <path class="" data-original="#000000" fill="currentColor" d="M9.707 19.121a.997.997 0 0 1-1.414 0l-5.646-5.647a1.5 1.5 0 0 1 0-2.121l.707-.707a1.5 1.5 0 0 1 2.121 0L9 14.171l9.525-9.525a1.5 1.5 0 0 1 2.121 0l.707.707a1.5 1.5 0 0 1 0 2.121z"></path>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </label>
+                            <p class="switch-text-explain">PGCD facteur de...</p>
+                        </div>
+                        <div class="input-form-container input-factor-container">
+                            <input class="input-form input-factor" type="hidden" placeholder="Eg : 12, 10" pattern="\d+(,\d+(\.\d+)?)*">
+                        </div>
+                        <button class="btn-submit-pgcd" type="submit">Calculer</button>
+                        <div class="message-user-container">
+                            <p class="message-user"></p>
+                        </div>
+                    </div>
+                </form>
+                <div class="result-container">
+                    <button class="copy">
+                        <span data-text-end="Copié!" data-text-initial="Copier" class="tooltip"></span>
+                        <span>
+                            <svg xml:space="preserve" style="enable-background:new 0 0 512 512" viewBox="0 0 6.35 6.35" y="0" x="0" height="20" width="20" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg" class="clipboard">
+                                <g>
+                                  <path fill="currentColor" d="M2.43.265c-.3 0-.548.236-.573.53h-.328a.74.74 0 0 0-.735.734v3.822a.74.74 0 0 0 .735.734H4.82a.74.74 0 0 0 .735-.734V1.529a.74.74 0 0 0-.735-.735h-.328a.58.58 0 0 0-.573-.53zm0 .529h1.49c.032 0 .049.017.049.049v.431c0 .032-.017.049-.049.049H2.43c-.032 0-.05-.017-.05-.049V.843c0-.032.018-.05.05-.05zm-.901.53h.328c.026.292.274.528.573.528h1.49a.58.58 0 0 0 .573-.529h.328a.2.2 0 0 1 .206.206v3.822a.2.2 0 0 1-.206.205H1.53a.2.2 0 0 1-.206-.205V1.529a.2.2 0 0 1 .206-.206z"></path>
+                                </g>
+                            </svg>
+                            <svg xml:space="preserve" style="enable-background:new 0 0 512 512" viewBox="0 0 24 24" y="0" x="0" height="18" width="18" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg" class="checkmark">
+                                <g>
+                                    <path data-original="#000000" fill="currentColor" d="M9.707 19.121a.997.997 0 0 1-1.414 0l-5.646-5.647a1.5 1.5 0 0 1 0-2.121l.707-.707a1.5 1.5 0 0 1 2.121 0L9 14.171l9.525-9.525a1.5 1.5 0 0 1 2.121 0l.707.707a1.5 1.5 0 0 1 0 2.121z"></path>
+                                </g>
+                            </svg>
+                       </span>
+                    </button>
+                    <div class="result-content">
+                        <p class="cp">PGCD : <span class="result-content result-content-pgcd"></span></p>
+                        <p class="cp">Diviseurs communs : <span class="result-content result-content-divisors"></span></p>
+                        <p class="cp">PGCD est facteur de : <span class="result-content result-content-factors"></span></p>
+                    </div>
+                </div>
+            </section>
+            <div class="collapsibles-container">
+                <div class="header-collapsible">C'est quoi le PGCD ?</div>
+                <div class="collapsible-content collapsible-content-1">
+                    <div>
+                        <p>Le PGCD <strong>(Plus Grand Commun Diviseur)</strong> de deux nombres est le plus grand nombre entier qui peut diviser ces deux nombres sans laisser de reste.</p>
+                        <p>Il est très utile en mathématiques, notamment pour simplifier des fractions ou résoudre des problèmes d’arithmétique.</p>
+                    </div>
+                </div>
+                <div class="header-collapsible">Un exemple ?</div>
+                <div class="collapsible-content collapsible-content-2">
+                    <div>
+                        <p>Par exemple, le PGCD de <strong>12</strong> et <strong>18</strong> est <strong>6</strong>, car 6 est le plus grand nombre qui divise à la fois 12 et 18 :</p>
+                        <ul class="collapsible-content-list">
+                            <li><strong>12</strong> se divise par : 1, 2, 3, 4, 6, 12</li>
+                            <li><strong>18</strong> se divise par : 1, 2, 3, 6, 9, 18</li>
+                        </ul>
+                        <p>Les diviseurs communs sont <strong>1, 2, 3 et 6</strong> → Le plus grand est <strong>6</strong></p>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal CGU -->
+            <div id="id01-cgu" class="modal-cgu">
+                <form class="modal-content-cgu animate-cgu">
+                    <div class="container-modal-cgu">
+                        <h2>Conditions Générales d'Utilisation</h2>
+                        <p class="modal-cgu-description">En accédant à ce site, vous acceptez les conditions générales d'utilisation <br>
+                            <a class="modal-link-cgu" href="cgu.html">Lire les CGU</a></p>    
+                        <div class="clearfix-modal-cgu">
+                            <button type="button" class="agreebtn">J'accepte</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <footer class="footer">
+                <p>&copy; 2025 - pgcd - Tous droits réservés.</p>
+                <div class="footer-content-bottom">
+                    <div class="cc-mc-container">
+                        <div class="policy cgu-container">
+                            <a href="cgu.html" class="cgu-link" title="Conditions Générales d'Utilisation">Conditions Générales d'Utilisation</a>
+                        </div>
+                        <div class="policy ml-container">
+                            <a href="mentions-legales.html" class="ml-link" title="Mentions Légales">Mentions Légales</a>
+                        </div>
+                    </div>
+                    <ul class="footer-list-social-networks">
+                        <li class="icon-content">
+                          <a
+                            href="https://www.linkedin.com/in/salah-wassim-arfa-20a5a1194/"
+                            aria-label="LinkedIn"
+                            data-social="linkedin"
+                          >
+                            <div class="filled"></div>
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="16"
+                              height="16"
+                              fill="currentColor"
+                              class="bi bi-linkedin"
+                              viewBox="0 0 16 16"
+                              xml:space="preserve"
+                            >
+                              <path
+                                d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"
+                                fill="currentColor"
+                              ></path>
+                            </svg>
+                          </a>
+                          <!-- <div class="tooltip">LinkedIn</div> -->
+                        </li>
+                        <li class="icon-content">
+                          <a href="https://www.github.com/Salah-Wassim" aria-label="GitHub" data-social="github">
+                            <div class="filled"></div>
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="16"
+                              height="16"
+                              fill="currentColor"
+                              class="bi bi-github"
+                              viewBox="0 0 16 16"
+                              xml:space="preserve"
+                            >
+                              <path
+                                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"
+                                fill="currentColor"
+                              ></path>
+                            </svg>
+                          </a>
+                          <!-- <div class="tooltip">GitHub</div> -->
+                        </li>
+                        <li class="icon-content">
+                            <a href="https://discord.gg/ZG3t2nW5" aria-label="Discord" data-social="discord">
+                                <div class="filled"></div>
+                                <svg
+                                    viewBox="0 0 16 16"
+                                    class="bi bi-discord"
+                                    fill="currentColor"
+                                    height="16"
+                                    width="16"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M13.545 2.907a13.2 13.2 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.2 12.2 0 0 0-3.658 0 8 8 0 0 0-.412-.833.05.05 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019q.463-.63.818-1.329a.05.05 0 0 0-.01-.059l-.018-.011a9 9 0 0 1-1.248-.595.05.05 0 0 1-.02-.066l.015-.019q.127-.095.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.05.05 0 0 1 .053.007q.121.1.248.195a.05.05 0 0 1-.004.085 8 8 0 0 1-1.249.594.05.05 0 0 0-.03.03.05.05 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.2 13.2 0 0 0 4.001-2.02.05.05 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03 0 0 0-.02-.019m-8.198 7.307c-.789 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612m5.316 0c-.788 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612"
+                                    ></path>
+                                </svg>
+                            </a>
+                            <!-- <div class="tooltip">Discord</div> -->
+                        </li>
+                    </ul>
+                </div>
+            </footer>
+        </div>
+        <script type="text/javascript" src="js/cgu.js"></script>
+        <script type="text/javascript" src="js/pgcd.js"></script>
+        <script type="text/javascript" src="js/switch.js"></script>
+        <script type="text/javascript" src="js/paste.js"></script>
+        <script type="text/javascript" src="js/burger.js"></script>
+    </body>
+</html>

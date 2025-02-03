@@ -23,6 +23,23 @@ body {
   min-height: 100vh; /* S'étend sur toute la hauteur de la fenêtre */
 }
 
+.btn-back{
+  position: fixed;
+  font-weight: bold;
+  width: 150px;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.btn-back:hover{
+  opacity: 0.8;
+}
+
 @media screen and (max-width: 600px) {
   body{
     margin: 0;

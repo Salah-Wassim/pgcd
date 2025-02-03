@@ -1,0 +1,96 @@
+.clearfix-modal-cgu{
+    margin-top: 10px
+}
+.clearfix-modal-cgu > button {
+    background-color: #000;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+    border-radius: 8px;
+}
+
+.clearfix-modal-cgu > button:hover {
+    opacity:1;
+}
+
+.agreebtn {
+    /*background-color: #f44336;*/
+    width:50%;
+    margin-bottom:0;
+    font-weight:bold
+}
+
+.container-modal-cgu {
+    padding: 16px;
+    text-align: center;
+}
+
+.modal-cgu {
+   display: none; /* Hidden by default */
+   position: fixed; /* Stay in place */
+   z-index: 1; /* Sit on top */
+   left: 0;
+   top: 0;
+   width: 100%; /* Full width */
+   height: 100%; /* Full height */
+   background-color: rgba(0, 0, 0, 0.8); /* Black w/ opacity */
+   align-items: center; /* Centre verticalement */
+   justify-content: center; /* Centre horizontalement */
+   overflow: hidden; /* Évite tout débordement */
+   overflow: auto; 
+}
+
+.modal-content-cgu {
+    background-color: #fefefe;
+    border: 1px solid #888;
+    position: relative;
+    /*border: 1px solid #888;*/
+    width: 80%; /* Largeur par défaut */
+    max-width: 500px; /* Limite la taille maximale */
+    padding: 20px; /* Ajoute un peu d’espace intérieur */
+    border-radius: 8px; /* Coins arrondis pour un design moderne */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ajoute une ombre subtile */
+    animation: animatezoom 0.6s; /* Animation à l’ouverture */
+    max-height: 90%; /* Évite que la modal dépasse en hauteur */
+    overflow: hidden; /* Scroll si le contenu est trop grand */
+}
+.modal-cgu-description{
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+    color: rgb(99, 99, 99);
+}
+.animate-cgu {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+.modal-link-cgu{
+    margin-top: 5px;
+}
+.container-modal-cgu > h2{
+    margin-bottom:12px;
+    color: rgb(26, 26, 26);
+}
+
+.clearfix{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* Clear floats */
+.clearfix::after {
+    content: "";
+    clear: both;
+}
+
+@media screen and (max-width: 300px) {
+    .agreebtn {
+        width: 100%;
+    }
+}

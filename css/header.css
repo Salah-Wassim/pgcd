@@ -79,7 +79,7 @@
     }
     .header-right-content.show{
         display: flex;
-        flex-direction: column;
+        flex-direction: column-reverse;
         margin-top: 10px;
     }
     .header-left-content{

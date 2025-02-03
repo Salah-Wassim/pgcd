@@ -27,7 +27,14 @@
   .collapsible-content-2{
     margin-bottom: 20px;
   }
-
+  .collapsible-content-2 div > p{margin-bottom: 9px;}
+  .collapsible-content-list li{
+    list-style: none;
+    background: url('https://img.icons8.com/ios-filled/15/007bff/checkmark.png') no-repeat left center;
+    background-size: 15px;
+    padding-left: 25px;
+    margin-bottom: 10px;
+  }
   @media screen and (max-width: 850px){
     .collapsibles-container{
         padding:0;

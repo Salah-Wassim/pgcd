@@ -7,6 +7,61 @@ footer {
     padding: 1rem;
 }
 
+.footer-content-bottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+@media screen and (max-width: 631px){
+    .footer-content-bottom{
+        flex-direction: column;
+        gap: 7px;
+    }
+}
+
+/*POLICY*/
+
+.policy-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top:8px;
+}
+
+.cc-mc-container{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.cgu-link, .ml-link{
+    color: #f4f4f4;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: bold;
+    font-family: sans-serif;
+    padding: 4px 8px 4px 8px;
+    background-color: #444;
+    border: 1px solid #444;
+}
+
+@media screen and (max-width: 376px){
+    .cc-mc-container{
+        flex-direction: column;
+        margin-top: 10px;
+        gap: 15px;
+    }
+}
+
+@media screen and (max-width: 631px){
+    .cc-mc-container{
+        margin-top: 10px;
+    }
+}
+
 /*SOCIAL NETWORKS*/
 
 /* From Uiverse.io by wilsondesouza */ 

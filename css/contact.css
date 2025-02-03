@@ -1,3 +1,4 @@
+.contact-faq-containers{margin-top: 30px;}
 .contact {
     display: flex;
     flex-direction: column;
@@ -48,12 +49,20 @@
     font-weight: bold;
     margin-top: 10px;
 }
+
 .contact-info, .faq {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin-top: 30px;
 }
 .contact-info ul, .faq ul {
     list-style: none;
     padding: 0;
+}
+.faq ul{
+    text-align: center;
 }
 .contact-info ul li, .faq ul li {
     margin-bottom: 10px;
@@ -71,7 +80,9 @@
     font-size: 18px;
     font-weight: bold;
 }
-
+.faq h2{
+    margin-bottom: 15px;
+}
 @media screen and (max-width: 600px){
     form {
         width: 100%;

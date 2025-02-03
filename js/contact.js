@@ -36,3 +36,19 @@ btnFormContactSubmit.addEventListener('submit', function(e){
         }
     }
 })
+
+const btnGithub = document.querySelector(".github");
+const btnLinkedin = document.querySelector(".linkdin");
+const btnDiscord = document.querySelector('.discord');
+
+btnGithub.addEventListener('click', function(){
+    window.location.replace("https://github.com/Salah-Wassim");
+})
+
+btnLinkedin.addEventListener('click', function(){
+    window.location.replace("https://www.linkedin.com/in/salah-wassim-arfa-20a5a1194/");
+})
+
+btnDiscord.addEventListener('click', function(){
+    window.location.replace("https://discord.gg/ZG3t2nW5");
+})

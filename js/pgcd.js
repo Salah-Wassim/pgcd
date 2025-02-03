@@ -93,11 +93,11 @@ function getPgcdFactor(PGCD, a){
         arrayFactors.push(interger);
       }
     })
-    message = `${PGCD} is not factor of ${ a.length > 1 ? "integers" : "integer"} : ${a.join(', ')}`
+    message = `${PGCD} n'est pas facteur ${ a.length > 1 ? " des entiers" : "de l'entier"} : ${a.join(', ')}`
     return arrayFactors.length > 0 ? arrayFactors : message;
   }
   else{
-    message = `No integers have been entered`
+    message = `Aucun entier n'a été saisi`
     return message
   }
 }
@@ -109,7 +109,7 @@ function getPgcdDivisors(PGCD){
       arrayDivisors.push(i)
     }
   }
-  message = `No common divisors have been found for ${PGCD}`
+  message = `Aucun diviseur commun n'a été trouvé pour ${PGCD}`
   return arrayDivisors.length > 0 ? arrayDivisors : handleMessage(message)
 }
 
@@ -140,7 +140,7 @@ function displayResult(a, b) {
         }
         console.log(
           "PGCD : ", resultObj.pgcd,
-          "\nPGCD divisors :", resultObj.divisors, 
+          "\nCommon dividers :", resultObj.divisors, 
           "\nPGCD is factor of : ", resultObj.factors
         )
         resultPgcd.innerHTML = resultObj.pgcd
@@ -148,15 +148,15 @@ function displayResult(a, b) {
         resultFactor.innerHTML = resultObj.factors
       }
       else{
-        handleMessage("Oops :( An error occurred when calculating the PGCD")
+        handleMessage("Oops :( Une erreur s'est produite lors du calcul du PGCD.")
       }
     }
     else{
-      handleMessage("The number of integers must be between 1 and 3 : ]1, 3]")
+      handleMessage("Le nombre d'entiers doit être compris entre 1 et 3 : ]1, 3]")
     }
   }
   else{
-    handleMessage(`Oups ! "${notIntegers.join(", ")}" ${notIntegers.length > 1 ? "are not integers !" : "is not a whole number !"}`)
+    handleMessage(`Oups ! "${notIntegers.join(", ")}" ${notIntegers.length > 1 ? "ne sont pas des entiers !" : "n'est pas un nombre entier !"}`)
   }
 }
 //displayResult([2, 10], [11, 24, 36])

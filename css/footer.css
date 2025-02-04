@@ -21,7 +21,7 @@ footer {
     }
 }
 
-/*POLICY*/
+/*POLICY && FAQ*/
 
 .policy-container{
     display: flex;
@@ -37,7 +37,7 @@ footer {
     gap: 15px;
 }
 
-.cgu-link, .ml-link{
+.cgu-link, .ml-link, .faq-link{
     color: #f4f4f4;
     text-decoration: none;
     font-size: 13px;

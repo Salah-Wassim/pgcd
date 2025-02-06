@@ -36,7 +36,23 @@
   transition: max-height 0.2s ease-out;
   background-color: #f1f1f1;
 }
-.collapsible-content p{padding: 15px 0;}
+.collapsible-content p{
+  padding: 15px 0;
+  font-size: 14px;
+}
+
+.collapsible-list {
+  padding-left: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+.collapsible-list li {
+  background: url('https://img.icons8.com/ios-filled/15/007bff/checkmark.png') no-repeat left center;
+  background-size: 15px;
+  padding-left: 25px;
+  margin-bottom: 10px;
+}
 
 /*FAQs*/
 

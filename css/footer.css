@@ -14,7 +14,7 @@ footer {
     flex-direction: row;
 }
 
-@media screen and (max-width: 669px){
+@media screen and (max-width: 741px){
     .footer-content-bottom{
         flex-direction: column;
         gap: 7px;
@@ -48,7 +48,7 @@ footer {
     border: 1px solid #444;
 }
 
-@media screen and (max-width: 376px){
+@media screen and (max-width: 471px){
     .cc-mc-container{
         flex-direction: column;
         margin-top: 10px;
@@ -56,7 +56,7 @@ footer {
     }
 }
 
-@media screen and (max-width: 669px){
+@media screen and (max-width: 741px){
     .cc-mc-container{
         margin-top: 10px;
     }

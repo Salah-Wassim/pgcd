@@ -14,6 +14,8 @@ const messageUser = document.querySelector(".message-user");
 const spanPgcdFactor = document.querySelector(".span-result-content-pgcd-factor");
 const spanUserInputs = document.querySelector(".span-intergers-user-input");
 
+spanPgcdFactor.innerHTML = "PGCD"
+
 function resetAll(){
   pgcd=null
   message="";

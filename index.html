@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="css/result.css">
         <link rel="stylesheet" href="css/paste-button.css">
         <link rel="stylesheet" href="css/message.css">
-        <link rel="stylesheet" href="css/collapsibles.css">
+        <link rel="stylesheet" href="css/informations.css">
         <link rel="stylesheet" href="css/modal-cgu.css">
         <link rel="stylesheet" href="css/footer.css">
         <link rel="website icon" type="png" href="assets/PGCD.png">
@@ -103,23 +103,57 @@
                     </div>
                 </div>
             </section>
-            <div class="collapsibles-container">
-                <div class="header-collapsible">C'est quoi le PGCD ?</div>
-                <div class="collapsible-content collapsible-content-1">
+            <div class="informations-container">
+                <div class="header-information">C'est quoi le PGCD ?</div>
+                <div class="information-content information-content-1">
                     <div>
                         <p>Le PGCD <strong>(Plus Grand Commun Diviseur)</strong> de deux nombres est le plus grand nombre entier qui peut diviser ces deux nombres sans laisser de reste.</p>
                         <p>Il est très utile en mathématiques, notamment pour simplifier des fractions ou résoudre des problèmes d’arithmétique.</p>
                     </div>
                 </div>
-                <div class="header-collapsible">Un exemple ?</div>
-                <div class="collapsible-content collapsible-content-2">
+                <div class="header-information">Un exemple théorique ?</div>
+                <div class="information-content information-content-2">
                     <div>
-                        <p>Par exemple, le PGCD de <strong>12</strong> et <strong>18</strong> est <strong>6</strong>, car 6 est le plus grand nombre qui divise à la fois 12 et 18 :</p>
-                        <ul class="collapsible-content-list">
+                        <p>Le PGCD de <strong>12</strong> et <strong>18</strong> est <strong>6</strong>, car 6 est le plus grand nombre qui divise à la fois 12 et 18 :</p>
+                        <ul class="information-content-list">
                             <li><strong>12</strong> se divise par : 1, 2, 3, 4, 6, 12</li>
                             <li><strong>18</strong> se divise par : 1, 2, 3, 6, 9, 18</li>
                         </ul>
                         <p>Les diviseurs communs sont <strong>1, 2, 3 et 6</strong> → Le plus grand est <strong>6</strong></p>
+                    </div>
+                </div>
+                <div class="header-information">Un exemple concret ?</div>
+                <div class="information-content information-content-3">
+                    <div>
+                        <h2 class="h2-information-content-3">Problème : Partager un terrain en parcelles carrées</h2>
+                        <p>Imaginons que vous possédez un terrain rectangulaire de <strong>168 mètres</strong> de long et <strong>120 mètres</strong> de large. Vous voulez le diviser en parcelles carrées de la plus grande taille possible, sans gaspillage de terrain.</p>
+
+                        <h2 class="h2-information-content-3">Solution avec le PGCD</h2>
+                        <p>La question revient à chercher la plus grande longueur de côté possible pour ces carrés. Cette longueur correspond au <strong>Plus Grand Diviseur Commun (PGCD)</strong> des dimensions du terrain : <strong>168 et 120</strong>.</p>
+
+                        <h3 class="h3-information-content-3">Calcul du PGCD(168, 120)</h3>
+                        <p>On peut le trouver avec l'algorithme d'Euclide :</p>
+                        <ul class="information-content-list">
+                            <li>168 ÷ 120 = 1, reste <strong>48</strong>.</li>
+                            <li>120 ÷ 48 = 2, reste <strong>24</strong>.</li>
+                            <li>48 ÷ 24 = 2, reste <strong>0</strong>.</li>
+                        </ul>
+                        <p><strong>Le PGCD de 168 et 120 est 24.</strong></p>
+                    
+                        <h3 class="h3-information-content-3">Conclusion</h3>
+                        <p>La plus grande taille possible pour les parcelles carrées est <strong>24 mètres × 24 mètres</strong>. En divisant :</p>
+                        <ul class="information-content-list">
+                            <li>168 ÷ 24 = <strong>7</strong> carrés en longueur.</li>
+                            <li>120 ÷ 24 = <strong>5</strong> carrés en largeur.</li>
+                        </ul>
+                        <p>On obtient <strong>7 × 5 = 35 parcelles carrées</strong>, sans perte d’espace.</p>
+                    
+                        <p>C’est un exemple concret où le PGCD permet d'optimiser l’utilisation d’un espace de manière rationnelle et efficace. Ce principe est utilisé dans :</p>
+                        <ul class="information-content-list">
+                            <li><strong>L’aménagement du territoire</strong></li>
+                            <li><strong>La menuiserie</strong></li>
+                            <li><strong>La cryptographie</strong> (exemple : algorithme RSA)</li>
+                        </ul>
                     </div>
                 </div>
             </div>

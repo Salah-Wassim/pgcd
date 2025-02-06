@@ -11,6 +11,10 @@ const inputNumbers = document.querySelector(".input-numbers");
 const inputFactors = document.querySelector(".input-factor");
 const btnSubmit = document.querySelector(".btn-submit-pgcd");
 const messageUser = document.querySelector(".message-user");
+const spanPgcdFactor = document.querySelector(".span-result-content-pgcd-factor");
+const spanUserInputs = document.querySelector(".span-intergers-user-input");
+
+spanPgcdFactor.innerHTML = "PGCD"
 
 function resetAll(){
   pgcd=null
@@ -143,9 +147,11 @@ function displayResult(a, b) {
           "\nCommon dividers :", resultObj.divisors, 
           "\nPGCD is factor of : ", resultObj.factors
         )
+        spanUserInputs.innerHTML = inputNumbers.value.split(', ')
         resultPgcd.innerHTML = resultObj.pgcd
         resultDivisors.innerHTML = resultObj.divisors
         resultFactor.innerHTML = resultObj.factors
+        spanPgcdFactor.innerHTML = resultObj.pgcd
       }
       else{
         handleMessage("Oops :( Une erreur s'est produite lors du calcul du PGCD.")

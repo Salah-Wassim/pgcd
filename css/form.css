@@ -14,11 +14,25 @@
     flex-direction: column;
 }
 
-.input-form-container{margin: 8px 0;}
-
+.input-form-container{ margin: 8px 0;}
+.noname {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
 .input-factor-container{
     display: flex;
     flex-direction: column;
+}
+.input-numbers-container{
+    display: flex;
+    flex-direction: column;
+}
+.input-numbers-container > label{
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 4px;
+    margin-left: 1.5px;
 }
 .switch-text-explain{padding: 5px;}
 .input-form {

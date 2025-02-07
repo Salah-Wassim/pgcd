@@ -1,11 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
-        <link rel="stylesheet" href="css/general.css">
-        <link rel="stylesheet" href="css/header.css">
+        <meta name="description" content="Calculer le PGCD de deux nombres ? Facile, me direz-vous. Mais qu'en est-il de trois nombres ? C'est justement pour cela que ce site existe" />
+        <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" as="style" onload="this.rel='stylesheet'"/>
+        <link rel="preload" href="css/general.css" as="style" onload="this.rel='stylesheet'">
+        <link rel="preload" href="css/header.css" as="style" onload="this.rel='stylesheet'">
+        <link rel="preload" href="css/footer.css" as="style" onload="this.rel='stylesheet'">
+        <noscript>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+            <link rel="stylesheet" href="css/general.css">
+            <link rel="stylesheet" href="css/header.css">
+            <link rel="stylesheet" href="css/footer.css">
+        </noscript>
         <link rel="stylesheet" href="css/titles.css">
         <link rel="stylesheet" href="css/form.css">
         <link rel="stylesheet" href="css/switch.css">
@@ -14,9 +22,17 @@
         <link rel="stylesheet" href="css/message.css">
         <link rel="stylesheet" href="css/informations.css">
         <link rel="stylesheet" href="css/modal-cgu.css">
-        <link rel="stylesheet" href="css/footer.css">
         <link rel="website icon" type="png" href="assets/PGCD.png">
         <title>PGCD</title>
+        <script type="application/ld+json">
+            {
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "PGCD",
+              "url": "https://pgcd.vercel.app/",
+              "description": "Un outil rapide et gratuit pour calculer le PGCD de deux nombres."
+            }
+        </script>
     </head>
     <body>
         <div class="main-container">
@@ -25,7 +41,7 @@
                     <div class="header-left-content">
                         <div class="avatar-and-title-header-container">
                             <div class="avatar-header-container">   
-                                <img src="assets/PGCD.png" alt="Avatar" class="avatar-header">
+                                <img loading="lazy" src="assets/PGCD.png" alt="Avatar" class="avatar-header">
                             </div>
                             <div class="title-header-container title-header-container-pgcd">
                                 <h3>PGCD</h3>

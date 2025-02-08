@@ -9,19 +9,21 @@ btnNumbers.addEventListener("click", function(){
     numbers.focus();
 })
 
+function toggleClass(btn, classToRemove, classToAdd){
+    btn.classList.remove(classToRemove);
+    btn.classList.add(classToAdd);
+}
+
 if(factors.type === "hidden"){
-    btnFactors.classList.remove("clear-button")
-    btnFactors.classList.add("active-factors")
+    toggleClass(btnFactors, "clear-button", "active-factors")
 }
 
 checkboxSwitch.addEventListener('change', function(){
     if(checkboxSwitch.checked){
-        btnFactors.classList.remove("active-factors")
-        btnFactors.classList.add("clear-button")
+        toggleClass(btnFactors, "active-factors", "clear-button")
     }
     else{
-        btnFactors.classList.remove("clear-button")
-        btnFactors.classList.add("active-factors")
+        toggleClass(btnFactors, "clear-button", "active-factors")
     }
 })
 

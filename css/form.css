@@ -21,7 +21,7 @@
     position: relative;
     display: inline-block;
 }
-.input-numbers{
+.input-form{
     max-width: 190px;
     width: 100%;
     padding: 12px 30px 12px 12px;
@@ -49,6 +49,7 @@
 .clear-button:hover {
     color: black;
 }
+.active-factors{display:none}
 
 /*END CROSS INPUT*/
 

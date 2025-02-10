@@ -7,12 +7,13 @@ let allResults = [];
 const resultPgcd = document.querySelector(".result-content-pgcd");
 const resultDivisors = document.querySelector(".result-content-divisors");
 const resultFactor = document.querySelector(".result-content-factors");
+const resultPpcm = document.querySelector(".result-content-ppcm");
 const inputNumbers = document.querySelector(".input-numbers");
 const inputFactors = document.querySelector(".input-factor");
 const btnSubmit = document.querySelector(".btn-submit-pgcd");
 const messageUser = document.querySelector(".message-user");
 const spanPgcdFactor = document.querySelector(".span-result-content-pgcd-factor");
-const spanUserInputs = document.querySelector(".span-intergers-user-input");
+const spanUserInputs = document.querySelectorAll(".span-intergers-user-input");
 
 spanPgcdFactor.innerHTML = "PGCD"
 
@@ -136,20 +137,26 @@ function displayResult(a, b) {
       const PGCD = chooseWay(bCopy);
       if(PGCD){
         const factors = getPgcdFactor(PGCD, a);
-        const divisors = getPgcdDivisors(PGCD)
+        const divisors = getPgcdDivisors(PGCD);
+        const ppcm = calculPpcm(inputNumbers.value, PGCD)
         const resultObj = {
           "pgcd" : PGCD,
           "divisors" : Array.isArray(divisors) ? divisors.join(', ') : divisors,
+          "ppcm" : ppcm,
           "factors" : Array.isArray(factors) ? factors.join(', ') : factors
         }
         console.log(
           "PGCD : ", resultObj.pgcd,
           "\nCommon dividers :", resultObj.divisors, 
+          "\nPPCM :", resultObj.ppcm,
           "\nPGCD is factor of : ", resultObj.factors
         )
-        spanUserInputs.innerHTML = inputNumbers.value.split(', ')
+        spanUserInputs.forEach(spanUserInput => {
+          spanUserInput.innerHTML = inputNumbers.value.split(', ')
+        })
         resultPgcd.innerHTML = resultObj.pgcd
         resultDivisors.innerHTML = resultObj.divisors
+        resultPpcm.innerHTML = resultObj.ppcm
         resultFactor.innerHTML = resultObj.factors
         spanPgcdFactor.innerHTML = resultObj.pgcd
       }
@@ -219,6 +226,21 @@ function calculatePgcd(couple){
         isRunning = false
       }
     }
+  }
+}
+
+function calculPpcm(inputValues, pgcd){
+  let array = inputValues.split(',');
+  let ppcmResult;
+  if(array.length > 2){
+    ppcmResult = "Non fonctionnel"
+    return ppcmResult
+  }
+  else{
+    ppcmResult = array.reduce((acc, value) => {
+      return (acc * value) / pgcd
+    })
+    return ppcmResult;
   }
 }
 

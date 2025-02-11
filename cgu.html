@@ -1,13 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
-    <link rel="stylesheet" href="css/general.css">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" as="style" onload="this.rel='stylesheet'"/>
+    <link rel="preload" href="css/general.css" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="css/footer.css" as="style" onload="this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/footer.css">
+    </noscript>
     <link rel="stylesheet" href="css/titles.css">
     <link rel="stylesheet" href="css/cgu.css">
-    <link rel="stylesheet" href="css/footer.css">
     <link rel="website icon" type="png" href="assets/PGCD.png">
     <title>PGCD - CGU</title>
 </head>
@@ -31,7 +36,7 @@
             <h3>Définitions</h3>
             <ul>
                 <li><strong>Société</strong> : fait référence à <strong>PGCD</strong>, basée en Vendée.</li>
-                <li><strong>Site web</strong> : désigne le site vitrine accessible à l'adresse <a href="https://PGCD.vercel.app" target="_blank">PGCD.vercel.app</a>.</li>
+                <li><strong>Site web</strong> : désigne le site vitrine accessible à l'adresse <a href="https://pgcd.vercel.app" target="_blank">pgcd.vercel.app</a>.</li>
                 <li><strong>Service</strong> : désigne l'accès au site web et à ses contenus.</li>
                 <li><strong>Utilisateur</strong> : désigne toute personne accédant ou utilisant le site.</li>
                 <li><strong>Dispositif</strong> : tout appareil permettant d'accéder au Service, tel qu'un ordinateur, un téléphone portable ou une tablette numérique.</li>
@@ -52,7 +57,7 @@
             </ul>
         
             <h2>5. Liens vers des Sites Tiers</h2>
-            <p>Le site peut contenir des liens vers des sites ou services tiers. La Société n'exerce aucun contrôle sur ces sites et décline toute responsabilité quant à leur contenu, leurs pratiques ou leur politique de confidentialité.</p>
+            <p>Le site contient des liens vers des sites ou services tiers. La Société n'exerce aucun contrôle sur ces sites et décline toute responsabilité quant à leur contenu, leurs pratiques ou leur politique de confidentialité.</p>
         
             <h2>6. Résiliation</h2>
             <p>La Société se réserve le droit de suspendre ou de restreindre l'accès au site à tout moment, sans préavis, notamment en cas de non-respect des présentes conditions générales.</p>
@@ -73,7 +78,6 @@
             <p>Pour toute question relative aux présentes conditions générales, vous pouvez nous contacter :</p>
             <ul>
                 <li>Via le formulaire : <a href="contact.html">formulaire de contact</a></li>
-                <li>Par courrier : Vendée, France</li>
             </ul>
           </div>
         </section>
@@ -86,6 +90,11 @@
                     </div>
                     <div class="policy ml-container">
                         <a href="mentions-legales.html" class="ml-link" title="Mentions Légales">Mentions Légales</a>
+                    </div>
+                    <div class="faq-container">
+                      <div class="faq-link-container">
+                          <a class="faq-link" href="faq.html">FAQs</a>
+                      </div>
                     </div>
                 </div>
                 <ul class="footer-list-social-networks">

@@ -4,7 +4,7 @@ let diff;
 let notIntegers = [];
 let allResults = [];
 let resultObject = {}
-const countsArray=[];
+let countsArray=[];
 let ppcmResult;
 
 const resultPgcd = document.querySelector(".result-content-pgcd");
@@ -21,6 +21,9 @@ const spanUserInputs = document.querySelectorAll(".span-intergers-user-input");
 spanPgcdFactor.innerHTML = "PGCD"
 
 function resetAll(){
+  resultObject = {}
+  countsArray=[]
+  ppcmResult=null
   pgcd=null
   message="";
   diff=null

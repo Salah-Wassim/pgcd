@@ -3,6 +3,9 @@ let message
 let diff;
 let notIntegers = [];
 let allResults = [];
+let resultObject = {}
+const countsArray=[];
+let ppcmResult;
 
 const resultPgcd = document.querySelector(".result-content-pgcd");
 const resultDivisors = document.querySelector(".result-content-divisors");
@@ -229,21 +232,6 @@ function calculatePgcd(couple){
   }
 }
 
-function calculPpcm(inputValues, pgcd){
-  let array = inputValues.split(',');
-  let ppcmResult;
-  if(array.length > 2){
-    ppcmResult = "Non fonctionnel"
-    return ppcmResult
-  }
-  else{
-    ppcmResult = array.reduce((acc, value) => {
-      return (acc * value) / pgcd
-    })
-    return ppcmResult;
-  }
-}
-
 function makeAllCouplePossible(arr){
   let couples = []
   let a;
@@ -288,4 +276,113 @@ function returnMostFrequentValueFromArray(arr){
   }
   
   pgcd = mostFrequentValue
+}
+
+function calculPpcm(inputValues, pgcd){
+  let array = inputValues.split(',');
+  if(array.length > 2){
+    getObjectPrimeFactorsArrays(array)
+    return ppcmResult
+  }
+  else{
+    ppcmResult = array.reduce((acc, value) => {
+      return (acc * value) / pgcd
+    })
+    return ppcmResult;
+  }
+}
+
+function getObjectPrimeFactorsArrays(arr){
+  if(arr.length===0 && !Array.isArray(arr)){
+    return false;
+  }
+  arr.forEach(element => {
+      resultObject[element] = factoriser(element);
+countOccurence(resultObject[element]) 
+  })
+}
+
+
+function countOccurence(arr){
+  if(arr.length===0 && !Array.isArray(arr)){
+    return false;
+  }
+  const count = arr.reduce((acc, value) => {
+      acc[value] = (acc[value] || 0)+1
+      return acc
+  }, {})
+  flattenObjectArray(count)
+}
+
+function flattenObjectArray(count){
+  countsArray.push(count);
+  const transformedArray = countsArray.flatMap(obj =>
+  Object.entries(obj).map(([key, value]) => ({ [key]: value }))
+  );
+  removeDuplicatesWithLowerValues(transformedArray)
+}
+
+function removeDuplicatesWithLowerValues(arr){
+  if(arr.length===0 && !Array.isArray(arr)){
+    return false;
+  }
+
+  const maxValues = {};
+  
+  arr.forEach(obj => {
+      for (let key in obj) {
+          maxValues[key] = Math.max(maxValues[key] || 0, obj[key]);
+      }
+  });
+
+  const resultLowerValues =  arr.filter(obj => {
+      return Object.entries(obj).every(([key, value]) => value === maxValues[key]);
+  });
+  
+  lcm_of_multiple_numbers(resultLowerValues);
+}
+
+function lcm_of_multiple_numbers(arr){
+  if(arr.length===0 && !Array.isArray(arr)){
+    return false;
+  }
+
+  let numbers=[];
+
+  arr.forEach(object => {
+    for(let key in object){
+      const result = Math.pow(key, object[key]);
+      numbers.push(result)
+    }
+  })
+
+  const finalResultPpcm = numbers.reduce((acc, value) => {
+    return acc * value;
+  })
+
+  ppcmResult = finalResultPpcm
+}
+
+function factoriser(n){
+  if(!n){
+      console.log(false)
+      return false;
+  }
+  let factors = [];
+  while(n%2===0){
+      factors.push(2);
+      n = n / 2
+  }
+  let d = 3;
+  while(d <= Math.sqrt(n)){
+      while(n%d===0){
+          factors.push(d)
+          n = n / d
+      }
+      if(d){d+=2}
+  }
+  if(n > 1){
+      factors.push(n)
+  }
+  return factors
 }

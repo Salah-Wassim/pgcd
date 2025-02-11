@@ -1,19 +1,19 @@
 .bar-horizontal-container{
+    margin-top: 20px;
     padding: 0 8%;
 }
 .bar-horizontal-content{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    padding: 15px;
+    padding: 25px 15px 0 15px;
     background-color: #f1f1f1;
 }
 
 .btn-bar-container{
     width: 49%;
     text-align: center;
-    background-color: azure;
-    border-radius: 6px 6px 0 0;
+    border-radius: 20px 20px 0 0;
     background-color: #ddd;
 }
 
@@ -30,24 +30,7 @@
   cursor: pointer;
   overflow: hidden;
   width: 100%;
-}
-
-.btn-bar::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: #333;
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.3s ease-out;
-}
-
-.btn-bar:hover::after {
-  transform: scaleX(1);
-  transform-origin: left;
+  border-radius: 20px 20px 0 0;
 }
 
 .hide-pgcd-informations{

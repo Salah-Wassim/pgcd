@@ -21,6 +21,7 @@
         <link rel="stylesheet" href="css/paste-button.css">
         <link rel="stylesheet" href="css/message.css">
         <link rel="stylesheet" href="css/informations.css">
+        <link rel="stylesheet" href="css/bar-horizontal.css">
         <link rel="stylesheet" href="css/modal-cgu.css">
         <link rel="website icon" type="png" href="assets/PGCD.png">
         <title>PGCD</title>
@@ -127,7 +128,17 @@
                     </div>
                 </div>
             </section>
-            <div class="informations-container">
+            <div class="bar-horizontal-container">
+                <div class="bar-horizontal-content">
+                    <div class="btn-bar-container btn-pgcd-bar-container">
+                        <button class="btn-bar btn-pgcd-bar">pgcd</button>
+                    </div>
+                    <div class="btn-bar-container btn-ppcm-bar-container">
+                        <button class="btn-bar btn-ppcm-bar">ppcm</button>
+                    </div>
+                </div>
+            </div>
+            <div class="informations-container pgcd-informations">
                 <div class="header-information">C'est quoi le PGCD ?</div>
                 <div class="information-content information-content-1">
                     <div>
@@ -180,6 +191,17 @@
                         </ul>
                     </div>
                 </div>
+            </div>
+            <div class="informations-container ppcm-informations">
+                <div class="header-information">C'est quoi le PPCM ?</div>
+                <div class="information-content information-content-1">
+                    <div>
+                        <p>Le PPCM <strong>(Plus Petit Commun Multiplicateur)</strong> de deux nombres est le plus grand nombre entier qui peut diviser ces deux nombres sans laisser de reste.</p>
+                        <p>Il est très utile en mathématiques, notamment pour simplifier des fractions ou résoudre des problèmes d’arithmétique.</p>
+                    </div>
+                </div>
+                <div class="header-information">Un exemple théorique ?</div>
+                <div class="header-information">Un exemple concret ?</div>
             </div>
             <!-- Modal CGU -->
             <div id="id01-cgu" class="modal-cgu">
@@ -283,5 +305,6 @@
         <script type="text/javascript" src="js/paste.js"></script>
         <script type="text/javascript" src="js/burger.js"></script>
         <script type="text/javascript" src="js/inputs.js"></script>
+        <script type="text/javascript" src="js/btn-bar.js"></script>
     </body>
 </html>

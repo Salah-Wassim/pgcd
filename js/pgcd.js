@@ -235,27 +235,16 @@ function calculatePgcd(couple){
   }
 }
 
-function makeAllCouplePossible(arr){
-  let couples = []
-  let a;
-  let b;
-  let couple;
-  if(!integersIsEqual(arr)){
-    arr.forEach(element => {
-      for(let i=0; i<arr.length; i++){
-        a = element;
-        b = arr[i]
-        if(a !== b){
-          couple = [a, b];
-          couples.push(couple)
-        }
-      }
-    })
-    getPgcd(couples)
+function makeAllCouplePossible(arr) {
+  
+  if (integersIsEqual(arr)) {
+      pgcd = arr[0];
+      return;
   }
-  else{
-    pgcd = arr[0]
-  }
+
+  let couples = arr.flatMap(a => arr.map(b => [a, b]));
+
+  getPgcd(couples);
 }
 
 function returnMostFrequentValueFromArray(arr){

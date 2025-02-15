@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Schoolbell&display=swap');
 
 .header{
-    /*background-color: gainsboro;*/
     background-color:#f1f1f1;
 }
 
@@ -10,7 +9,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin:20px;
+    padding:20px;
 }
 
 .avatar-and-title-header-container{
@@ -70,7 +69,7 @@
     border: none;
 }
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 620px){
     .header-content{
         display: block;
     }

@@ -33,10 +33,11 @@
     background:none;
     color: black;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 25px;
     width: auto;
     border: none;
-    margin-right: 7px;
+    padding: 0 7px;
+    cursor: pointer;
 }
 
 .titles-container-index-history {
@@ -67,7 +68,10 @@
 }
 .fa-trash{
     margin-left: 10px;
+    padding: 0 6px;
     border: none;
+    font-size: 15px;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 940px){

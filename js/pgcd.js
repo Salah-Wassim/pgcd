@@ -86,7 +86,7 @@ btnSubmit.addEventListener('click', function(e){
     displayResult(intFactor, intNumbers)
     storeInHistory(inputNumbersValues)
   }
-  
+
 })
 
 function storeInHistory(userInput){
@@ -101,24 +101,50 @@ function displayListHistory(){
   listHistory.forEach((element, index) => {
     let historyElementContainer = document.createElement("div");
     historyElementContainer.style.padding = "5px 0"
+    historyElementContainer.style.borderBottom = "solid 1px #ccc"
     historyElementContainer.textContent = element
 
     let btnDeleteHistory = document.createElement("button");
     btnDeleteHistory.style.border = "none"
     btnDeleteHistory.style.paddingLeft = "8px"
+    btnDeleteHistory.style.cursor = "pointer"
     btnDeleteHistory.textContent = "❌";
     btnDeleteHistory.onclick = () => removeHistoryElement(index)
 
+    let btnCopyElementHistory = document.createElement("button");
+    btnCopyElementHistory.textContent = "📋";
+    btnCopyElementHistory.style.border = "none"
+    btnCopyElementHistory.style.paddingLeft = "8px"
+    btnCopyElementHistory.style.cursor = "pointer"
+    btnCopyElementHistory.onclick = () => copyElementHistory(element);
+
     historyListElements.appendChild(historyElementContainer);
     historyElementContainer.appendChild(btnDeleteHistory)
+    historyElementContainer.appendChild(btnCopyElementHistory)
+  })
+}
+
+function copyElementHistory(element){
+  let elementToCoy = "";
+  elementToCoy += element;
+  navigator.clipboard.writeText(elementToCoy).then(() => {
+    console.log("Texte copié : " + elementToCoy);
+  }).catch(err => {
+    console.error("Erreur lors de la copie", err);
   })
 }
 
 function addElementIntoLocalStorage(element){
   let listHistory = JSON.parse(localStorage.getItem('history') || '[]');
-  listHistory.push(element);
-  localStorage.setItem("history", JSON.stringify(listHistory))
-  displayListHistory()
+  const isElementExist = listHistory.find(value => value === element)
+  if(!isElementExist){
+    listHistory.push(element);
+    localStorage.setItem("history", JSON.stringify(listHistory))
+    displayListHistory()
+  }
+  else{
+    displayListHistory()
+  }
 }
 
 function removeHistoryElement(index){

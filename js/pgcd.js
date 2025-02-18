@@ -17,8 +17,14 @@ const btnSubmit = document.querySelector(".btn-submit-pgcd");
 const messageUser = document.querySelector(".message-user");
 const spanPgcdFactor = document.querySelector(".span-result-content-pgcd-factor");
 const spanUserInputs = document.querySelectorAll(".span-intergers-user-input");
+const historyListElements = document.getElementById('cible-history-content-list')
+const btnDeleteHistory = document.querySelector(".btn-delete-list-history")
 
 spanPgcdFactor.innerHTML = "PGCD"
+
+window.addEventListener("load", function(){
+  displayListHistory()
+})
 
 function resetAll(){
   resultObject = {}
@@ -78,9 +84,57 @@ btnSubmit.addEventListener('click', function(e){
     const intNumbers = numbers.map(Number);
     const intFactor = factors ? factors.map(Number) : []
     displayResult(intFactor, intNumbers)
+    storeInHistory(inputNumbersValues)
   }
   
 })
+
+function storeInHistory(userInput){
+  addElementIntoLocalStorage(userInput)
+  displayListHistory()
+}
+
+function displayListHistory(){
+  historyListElements.innerHTML = "";
+  let listHistory = JSON.parse(localStorage.getItem("history") || "[]");
+
+  listHistory.forEach((element, index) => {
+    let historyElementContainer = document.createElement("div");
+    historyElementContainer.style.padding = "5px 0"
+    historyElementContainer.textContent = element
+
+    let btnDeleteHistory = document.createElement("button");
+    btnDeleteHistory.style.border = "none"
+    btnDeleteHistory.style.paddingLeft = "8px"
+    btnDeleteHistory.textContent = "❌";
+    btnDeleteHistory.onclick = () => removeHistoryElement(index)
+
+    historyListElements.appendChild(historyElementContainer);
+    historyElementContainer.appendChild(btnDeleteHistory)
+  })
+}
+
+function addElementIntoLocalStorage(element){
+  let listHistory = JSON.parse(localStorage.getItem('history') || '[]');
+  listHistory.push(element);
+  localStorage.setItem("history", JSON.stringify(listHistory))
+  displayListHistory()
+}
+
+function removeHistoryElement(index){
+  let listHistory = JSON.parse(localStorage.getItem("history") || "[]");
+  listHistory.splice(index, 1);
+  localStorage.setItem("history", JSON.stringify(listHistory))
+  displayListHistory()
+}
+
+function clearAllListHistory(){
+  btnDeleteHistory.addEventListener('click', function(){
+    localStorage.removeItem('history');
+    displayListHistory()
+  })
+}
+clearAllListHistory()
 
 function chooseWay(arr){
   if(arr.length > 2){

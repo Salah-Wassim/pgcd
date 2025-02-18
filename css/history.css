@@ -53,7 +53,22 @@
     max-height: 74%;
     overflow-y: auto;
 }
-
+.history-element-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 7px;
+    padding: 5px 0;
+}
+.btn-delete-element-history{
+    border: none;
+    font-weight: bold;
+    color: red;
+}
+.fa-trash{
+    margin-left: 10px;
+    border: none;
+}
 
 @media screen and (max-width: 940px){
     .history-section{

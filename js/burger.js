@@ -22,7 +22,7 @@ function toggleSidebar(show) {
     historyContent.classList.toggle("sidebar-show", show);
     indexContent.style.marginLeft = "0";
     btnSideBarHeader.style.display = show ? "none" : "block";
-    historyContent.style.width = show ? "200px" : "0";
+    historyContent.style.left = show ? (window.innerWidth <= 600 ? "0" : "50px") : "-100%";
 }
 
 btnSideBarHeader.addEventListener("click", () => toggleSidebar(true));
@@ -32,11 +32,11 @@ window.addEventListener("resize", () => {
     if (window.innerWidth > 940) {
         indexContent.style.marginLeft = "200px";
         btnSideBarHeader.style.display = "none";
-        historyContent.style.width = "200px";
+        historyContent.style.left = "50px"
     }
     else{
         indexContent.style.marginLeft = "0";
         btnSideBarHeader.style.display = "block";
-        historyContent.style.width = "0";
+        historyContent.style.left = "-100%";
     }
 });

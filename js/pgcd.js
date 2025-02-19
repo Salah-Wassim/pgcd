@@ -107,6 +107,7 @@ function displayListHistory(){
     let btnDeleteHistory = document.createElement("button");
     btnDeleteHistory.style.border = "none"
     btnDeleteHistory.style.paddingLeft = "8px"
+    btnDeleteHistory.style.fontSize = "14px"
     btnDeleteHistory.style.cursor = "pointer"
     btnDeleteHistory.textContent = "❌";
     btnDeleteHistory.onclick = () => removeHistoryElement(index)
@@ -115,6 +116,7 @@ function displayListHistory(){
     btnCopyElementHistory.textContent = "📋";
     btnCopyElementHistory.style.border = "none"
     btnCopyElementHistory.style.paddingLeft = "8px"
+    btnCopyElementHistory.style.fontSize = "14px"
     btnCopyElementHistory.style.cursor = "pointer"
     btnCopyElementHistory.onclick = () => copyElementHistory(element);
 

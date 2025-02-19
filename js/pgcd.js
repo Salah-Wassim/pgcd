@@ -100,7 +100,7 @@ function displayListHistory(){
 
   listHistory.forEach((element, index) => {
     let historyElementContainer = document.createElement("div");
-    historyElementContainer.style.padding = "5px 0"
+    historyElementContainer.style.padding = "10px 0"
     historyElementContainer.style.borderBottom = "solid 1px #ccc"
     historyElementContainer.textContent = element
 

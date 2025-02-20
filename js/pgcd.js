@@ -6,6 +6,7 @@ let allResults = [];
 let resultObject = {}
 let countsArray=[];
 let ppcmResult;
+let modalOptionsMenu;
 
 const resultPgcd = document.querySelector(".result-content-pgcd");
 const resultDivisors = document.querySelector(".result-content-divisors");
@@ -102,28 +103,91 @@ function displayListHistory(){
     let historyElementContainer = document.createElement("div");
     historyElementContainer.style.padding = "10px 0"
     historyElementContainer.style.borderBottom = "solid 1px #ccc"
+    historyElementContainer.style.position = "relative";
     historyElementContainer.textContent = element
 
-    let btnDeleteHistory = document.createElement("button");
-    btnDeleteHistory.style.border = "none"
-    btnDeleteHistory.style.paddingLeft = "8px"
-    btnDeleteHistory.style.fontSize = "14px"
-    btnDeleteHistory.style.cursor = "pointer"
-    btnDeleteHistory.textContent = "❌";
-    btnDeleteHistory.onclick = () => removeHistoryElement(index)
+    let btnOptionsMenu = document.createElement("button");
+    btnOptionsMenu.textContent = "●●●";
+    btnOptionsMenu.style.border = "none";
+    btnOptionsMenu.style.paddingLeft = "5px"
+    btnOptionsMenu.style.cursor = "pointer";
 
-    let btnCopyElementHistory = document.createElement("button");
-    btnCopyElementHistory.textContent = "📋";
-    btnCopyElementHistory.style.border = "none"
-    btnCopyElementHistory.style.paddingLeft = "8px"
-    btnCopyElementHistory.style.fontSize = "14px"
-    btnCopyElementHistory.style.cursor = "pointer"
-    btnCopyElementHistory.onclick = () => copyElementHistory(element);
+    btnOptionsMenu.addEventListener("click", (event) => {
+      openOptionsMenu(event, element, index);
+    });
 
     historyListElements.appendChild(historyElementContainer);
-    historyElementContainer.appendChild(btnDeleteHistory)
-    historyElementContainer.appendChild(btnCopyElementHistory)
+    historyElementContainer.appendChild(btnOptionsMenu)
   })
+}
+
+function openOptionsMenu(event, element, index){
+  if(modalOptionsMenu){
+    modalOptionsMenu.remove()
+  }
+  
+  const rect = event.target.getBoundingClientRect();
+
+  modalOptionsMenu = document.createElement("div");
+  modalOptionsMenu.style.display = "flex"
+  modalOptionsMenu.style.flexDirection = "column"
+  modalOptionsMenu.style.alignItems = "start"
+  modalOptionsMenu.style.gap = "10px"
+  modalOptionsMenu.style.position = "absolute";
+  modalOptionsMenu.style.top = `${rect.bottom + window.scrollY}px`;
+  modalOptionsMenu.style.left = `${rect.left + window.scrollX}px`;
+  modalOptionsMenu.style.background = "white";
+  modalOptionsMenu.style.border = "1px solid #ccc";
+  modalOptionsMenu.style.padding = "10px";
+  modalOptionsMenu.style.boxShadow = "0px 4px 6px rgba(0,0,0,0.1)";
+  modalOptionsMenu.style.borderRadius = "5px";
+  modalOptionsMenu.style.zIndex = "1000";
+  modalOptionsMenu.style.width = "150px"
+
+  let btnDeleteHistory = document.createElement("button");
+  btnDeleteHistory.style.border = "none"
+  btnDeleteHistory.style.padding = "8px 0"
+  btnDeleteHistory.style.fontSize = "14px"
+  btnDeleteHistory.style.cursor = "pointer"
+  btnDeleteHistory.style.width = "100%"
+  btnDeleteHistory.style.textAlign = "start"
+  btnDeleteHistory.style.paddingLeft = "8px"
+  btnDeleteHistory.textContent = "❌ Supprimer";
+  btnDeleteHistory.onclick = () => {
+    removeHistoryElement(index)
+    closeOptionsMenu();
+  }
+
+  let btnCopyElementHistory = document.createElement("button");
+  btnCopyElementHistory.textContent = "📋 Copier";
+  btnCopyElementHistory.style.border = "none"
+  btnCopyElementHistory.style.padding = "8px 0"
+  btnCopyElementHistory.style.fontSize = "14px"
+  btnCopyElementHistory.style.cursor = "pointer"
+  btnCopyElementHistory.style.width = "100%"
+  btnCopyElementHistory.style.textAlign = "start"
+  btnCopyElementHistory.style.paddingLeft = "8px"
+  btnCopyElementHistory.onclick = () => {
+    copyElementHistory(element)
+    closeOptionsMenu();
+  };
+
+  modalOptionsMenu.appendChild(btnCopyElementHistory);
+  modalOptionsMenu.appendChild(btnDeleteHistory);
+
+  document.body.appendChild(modalOptionsMenu);
+
+  setTimeout(() => {
+    document.addEventListener("click", closeOptionsMenu);
+  }, 10);
+}
+
+function closeOptionsMenu(event){
+  if (modalOptionsMenu && (!event || !modalOptionsMenu.contains(event.target))) {
+    modalOptionsMenu.remove();
+    modalOptionsMenu = null;
+    document.removeEventListener("click", closeOptionsMenu);
+  }
 }
 
 function copyElementHistory(element){

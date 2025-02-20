@@ -86,6 +86,7 @@ section > h2::after {
     background: rgba(37, 99, 235, 0.03);
     display: flex;
     align-items: baseline;
+    flex-wrap: wrap;
     gap: 0.75rem;
 }
 

@@ -1,0 +1,98 @@
+.history-section{
+    margin: 0;
+    padding: 5px;
+    width: 200px;
+    background-color: #f1f1f1;
+    position: absolute;
+    height: 100%;
+    text-align: center;
+    overflow-x: hidden;
+    transition: 0.5s;
+    z-index: 100;
+    top:13%;
+    border-radius: 0 9px 9px 0;
+    left: 50px;
+}
+
+.history-header-section{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border: solid 4px #aaa;
+    margin-bottom: 15px;
+    border-radius: 9px;
+}
+
+.btn-sidebar-header{
+    display: none;
+    background:none;
+    color: black;
+    font-weight: bold;
+    font-size: 26px;
+    width: auto;
+    border: none;
+    margin-right: 7px;
+    cursor: pointer;
+}
+
+.btn-sidebar-close{
+    background:none;
+    color: black;
+    font-weight: bold;
+    font-size: 25px;
+    width: auto;
+    border: none;
+    padding: 0 7px;
+    cursor: pointer;
+}
+
+.titles-container-index-history {
+    position: sticky;
+    top: 0;
+    background-color: #f1f1f1;
+    z-index: 10; 
+    padding: 9px 0;
+}
+.titles-container-index-history > h2{
+    margin-bottom: 0;
+}
+.history-content {
+    max-height: 74%;
+    overflow-y: auto;
+}
+.history-element-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 7px;
+    padding: 5px 0;
+}
+.btn-delete-element-history{
+    border: none;
+    font-weight: bold;
+    color: red;
+}
+.fa-trash{
+    margin-left: 10px;
+    padding: 0 6px;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 940px){
+    .history-section{
+        left: -100%;
+        box-shadow: 10px 5px 0 0 rgba(0, 0, 0, 0.5);
+    }
+    .btn-sidebar-header{
+        display: block;
+    }
+}
+
+@media screen and (min-width: 940px){
+    .btn-sidebar-close{
+        display: none;
+    }
+}

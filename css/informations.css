@@ -1,4 +1,4 @@
-.informations-container{
+/* .informations-container{
     padding:0 8%;
     margin-top: 20px;
 }
@@ -55,5 +55,122 @@
 @media screen and (max-width: 850px){
   .informations-container{
       padding:0;
+  }
+} */
+
+:root {
+  --primary-color: #6f42c1;
+  --secondary-color: #8a63d2;
+  --background-color: #f8fafc;
+  --text-color: #1e293b;
+  --heading-color: #0f172a;
+  --border-radius: 8px;
+  --transition-speed: 0.3s;
+}
+
+.informations-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.header-information {
+  background: var(--primary-color);
+  color: white;
+  padding: 1.25rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-speed) ease;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.header-information::before {
+  content: '▶';
+  font-size: 0.9em;
+  transition: transform var(--transition-speed) ease;
+}
+
+.header-information.active::before {
+  transform: rotate(90deg);
+}
+
+.header-information:hover {
+  background: var(--secondary-color);
+}
+
+.information-content {
+  background: var(--background-color);
+  padding: 1.5rem;
+  border-left: 4px solid var(--primary-color);
+  transition: all var(--transition-speed) ease;
+}
+
+.information-content > div {
+  padding: 1rem 0;
+}
+
+.information-content p {
+  color: var(--text-color);
+  line-height: 1.7;
+  margin: 1rem 0;
+}
+
+.information-content strong {
+  color: var(--primary-color);
+}
+
+.information-content-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.information-content-list li {
+  background: url('https://img.icons8.com/ios-filled/20/6f42c1/checkmark.png') no-repeat left center;
+  background-size: 20px;
+  padding-left: 30px;
+  margin: 0.75rem 0;
+  color: var(--text-color);
+}
+
+.h2-information-content-3,
+.h3-information-content-3 {
+  color: var(--heading-color);
+  margin: 1.5rem 0 1rem;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.h2-information-content-3::before,
+.h3-information-content-3::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 80%;
+  background: var(--primary-color);
+  border-radius: 3px;
+}
+
+@media (max-width: 768px) {
+  .informations-container {
+      padding: 0 1rem;
+  }
+  
+  .header-information {
+      font-size: 1.1rem;
+      padding: 1rem;
+  }
+  
+  .information-content {
+      padding: 1rem;
   }
 }

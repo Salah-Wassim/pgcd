@@ -1,4 +1,4 @@
-.bar-horizontal-container{
+/* .bar-horizontal-container{
     margin-top: 20px;
     padding: 0 8%;
 }
@@ -44,5 +44,95 @@
 @media screen and (max-width: 850px){
     .bar-horizontal-container{
         padding:0;
+    }
+} */
+
+:root {
+    --primary-color: #6f42c1;
+    --secondary-color: #8a63d2;
+    --background-color: #f8fafc;
+    --text-color: #1e293b;
+    --heading-color: #0f172a;
+    --border-radius: 8px;
+    --transition-speed: 0.3s;
+}
+
+.bar-horizontal-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+.bar-horizontal-content {
+    display: flex;
+    background: var(--background-color);
+    border-radius: var(--border-radius);
+    padding: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.btn-bar-container {
+    flex: 1;
+    text-align: center;
+    position: relative;
+}
+
+.btn-bar {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    background: transparent;
+    color: var(--text-color);
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+    border-radius: var(--border-radius);
+}
+
+.btn-bar::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background: var(--primary-color);
+    transition: all var(--transition-speed) ease;
+}
+
+.btn-bar:hover {
+    color: var(--primary-color);
+}
+
+.btn-bar.active {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.btn-bar.active::after {
+    width: 100%;
+}
+
+.hide-pgcd-informations{
+    display: none;
+}
+
+.hide-ppcm-informations{
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .bar-horizontal-container {
+        padding: 0 1rem;
+    }
+    
+    .btn-bar {
+        font-size: 0.9rem;
+        padding: 0.75rem;
     }
 }

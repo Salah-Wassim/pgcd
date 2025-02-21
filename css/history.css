@@ -56,6 +56,7 @@
 }
 .titles-container-index-history > h2{
     margin-bottom: 0;
+    font-size: larger;
 }
 .history-content {
     max-height: 74%;

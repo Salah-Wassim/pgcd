@@ -1,59 +1,107 @@
-.informations-container{
-    padding:0 8%;
-    margin-top: 20px;
+:root {
+  --primary-color: #6f42c1;
+  --secondary-color: #8a63d2;
+  --background-color: #f8fafc;
+  --text-color: #1e293b;
+  --heading-color: #0f172a;
+  --border-radius: 8px;
+  --transition-speed: 0.3s;
 }
+
+.informations-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
 .header-information {
-  background-color: #777;
+  background: var(--primary-color);
   color: white;
-  padding: 18px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-  font-weight: bold;
+  padding: 1.25rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  transition: all var(--transition-speed) ease;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.header-information::before {
+  content: '▶';
+  font-size: 0.9em;
+  transition: transform var(--transition-speed) ease;
 }
 
 .information-content {
-  padding: 0 18px;
-  overflow: hidden;
-  background-color: #f1f1f1;
-}
-.information-content > div{
-  padding: 20px 0;
-}
-.ppcm-informations .information-content div{
-  padding: 10px 0;
-}
-.ppcm-informations > .information-content div p{
-  margin:10px 0
-}
-.information-content-3{
-  margin-bottom: 20px;
+  background: var(--background-color);
+  padding: 1.5rem;
+  border-left: 4px solid var(--primary-color);
+  transition: all var(--transition-speed) ease;
 }
 
-.information-content-3 p {
-  margin: 10px 0;
-}
-.h2-information-content-3 {
-  color: #444;
-  padding-bottom: 5px;
-}
-.h3-information-content-3 {
-  color: #444;
-  margin: 15px 0;
+.information-content > div {
+  padding: 1rem 0;
 }
 
-.information-content-3 div > p{margin-bottom: 9px;}
-.information-content-list li{
+.information-content p {
+  color: var(--text-color);
+  line-height: 1.7;
+  margin: 1rem 0;
+}
+
+.information-content strong {
+  color: var(--primary-color);
+}
+
+.information-content-list {
   list-style: none;
-  background: url('https://img.icons8.com/ios-filled/15/007bff/checkmark.png') no-repeat left center;
-  background-size: 15px;
-  padding-left: 25px;
-  margin-bottom: 10px;
+  padding: 0;
+  margin: 1.5rem 0;
 }
-@media screen and (max-width: 850px){
-  .informations-container{
-      padding:0;
+
+.information-content-list li {
+  background: url('https://img.icons8.com/ios-filled/20/6f42c1/checkmark.png') no-repeat left center;
+  background-size: 20px;
+  padding-left: 30px;
+  margin: 0.75rem 0;
+  color: var(--text-color);
+}
+
+.h2-information-content-3,
+.h3-information-content-3 {
+  color: var(--heading-color);
+  margin: 1.5rem 0 1rem;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.h2-information-content-3::before,
+.h3-information-content-3::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 80%;
+  background: var(--primary-color);
+  border-radius: 3px;
+}
+
+@media (max-width: 768px) {
+  .informations-container {
+      padding: 0 1rem;
+  }
+  
+  .header-information {
+      font-size: 1.1rem;
+      padding: 1rem;
+  }
+  
+  .information-content {
+      padding: 1rem;
   }
 }

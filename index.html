@@ -23,6 +23,8 @@
         <link rel="stylesheet" href="css/informations.css">
         <link rel="stylesheet" href="css/bar-horizontal.css">
         <link rel="stylesheet" href="css/modal-cgu.css">
+        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/history.css">
         <link rel="website icon" type="png" href="assets/PGCD.png">
         <title>PGCD</title>
         <script type="application/ld+json">
@@ -38,10 +40,26 @@
     </head>
     <body>
         <div class="main-container">
+            <div class="history-section">
+                <div class="history-header-section">
+                    <div class="titles-container-index-history">
+                        <h2>Historique</h2>
+                    </div>
+                    <div class="trash-logo-container">
+                        <button class="btn-delete-list-history fa-solid fa-trash" aria-label="Supprime l'historique"></button>
+                    </div>
+                    <button class="btn-sidebar-close fa-solid fa-xmark" aria-label="Cacher l'historique"></button>
+                </div>
+                <div class="history-content">
+                    <div class="history-content-list" id="cible-history-content-list">
+                    </div>
+                </div>
+            </div>
             <header class="header">
                 <div class="header-content">
                     <div class="header-left-content">
                         <div class="avatar-and-title-header-container">
+                            <button class="btn-sidebar-header fa-solid fa-rectangle-list"></button>
                             <div class="avatar-header-container">   
                                 <img loading="lazy" src="assets/PGCD.png" alt="Avatar" class="avatar-header">
                             </div>
@@ -59,191 +77,190 @@
                     </div>
                 </div>
             </header>
-            <div class="titles-container">
-                <h1>PGCD</h1>
-                <h2>Calculer le PGCD de deux nombres ? Facile, me direz-vous. Mais qu'en est-il de trois nombres ? C'est justement pour cela que ce site existe !</h2>
-            </div>
-            <section>
-                <form class="form-pgcd">
-                    <div class="form-pgcd-content">
-                        <div class="input-form-container input-numbers-container">
-                            <label for="pgcd">Entiers (3 maximum)</label>
-                            <div class="input-wrapper">
-                                <input class="input-form input-numbers" type="text" placeholder="Eg : 12,10,87" pattern="\d+(,\d+(\.\d+)?)*" required>
-                                <button type="button" class="clear-button clear-button-numbers fa-solid fa-xmark"></button>
-                            </div>
-                        </div>
-                        <div class="switch-container">
-                            <label class="switch">
-                                <input class="switch-checkbox" type="checkbox">
-                                <div class="slider">
-                                    <div class="circle">
-                                        <svg class="cross" xml:space="preserve" style="enable-background:new 0 0 512 512" viewBox="0 0 365.696 365.696" y="0" x="0" height="6" width="6" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg">
-                                            <g>
-                                                <path data-original="#000000" fill="currentColor" d="M243.188 182.86 356.32 69.726c12.5-12.5 12.5-32.766 0-45.247L341.238 9.398c-12.504-12.503-32.77-12.503-45.25 0L182.86 122.528 69.727 9.374c-12.5-12.5-32.766-12.5-45.247 0L9.375 24.457c-12.5 12.504-12.5 32.77 0 45.25l113.152 113.152L9.398 295.99c-12.503 12.503-12.503 32.769 0 45.25L24.48 356.32c12.5 12.5 32.766 12.5 45.247 0l113.132-113.132L295.99 356.32c12.503 12.5 32.769 12.5 45.25 0l15.081-15.082c12.5-12.504 12.5-32.77 0-45.25zm0 0"></path>
-                                            </g>
-                                        </svg>
-                                        <svg class="checkmark" xml:space="preserve" style="enable-background:new 0 0 512 512" viewBox="0 0 24 24" y="0" x="0" height="10" width="10" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg">
-                                            <g>
-                                                <path class="" data-original="#000000" fill="currentColor" d="M9.707 19.121a.997.997 0 0 1-1.414 0l-5.646-5.647a1.5 1.5 0 0 1 0-2.121l.707-.707a1.5 1.5 0 0 1 2.121 0L9 14.171l9.525-9.525a1.5 1.5 0 0 1 2.121 0l.707.707a1.5 1.5 0 0 1 0 2.121z"></path>
-                                            </g>
-                                        </svg>
-                                    </div>
+            <div class="index-content">
+                <div class="titles-container">
+                    <h1>PGCD</h1>
+                    <h2>Calculer le PGCD de deux nombres ? Facile, me direz-vous. Mais qu'en est-il de trois nombres ? C'est justement pour cela que ce site existe !</h2>
+                </div>
+                <section>
+                    <form class="form-pgcd">
+                        <div class="form-pgcd-content">
+                            <div class="input-form-container input-numbers-container">
+                                <label for="pgcd">Entiers (3 maximum)</label>
+                                <div class="input-wrapper">
+                                    <input class="input-form input-numbers" type="text" placeholder="Eg : 12,10,87" pattern="\d+(,\d+(\.\d+)?)*" required>
+                                    <button type="button" class="clear-button clear-button-numbers fa-solid fa-xmark"></button>
                                 </div>
-                            </label>
-                            <p class="switch-text-explain">PGCD facteur de...</p>
-                        </div>
-                        <div class="input-form-container input-factor-container">
-                            <div class="input-wrapper">
-                                <input class="input-form input-factor" type="hidden" placeholder="Eg : 12,10" pattern="\d+(,\d+(\.\d+)?)*">
-                                <button type="button" class="clear-button clear-button-factors fa-solid fa-xmark"></button>
+                            </div>
+                            <div class="switch-container">
+                                <label class="switch">
+                                    <input class="switch-checkbox" type="checkbox">
+                                    <div class="slider">
+                                        <div class="circle">
+                                            <svg class="cross" xml:space="preserve" style="enable-background:new 0 0 512 512" viewBox="0 0 365.696 365.696" y="0" x="0" height="6" width="6" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                                                <g>
+                                                    <path data-original="#000000" fill="currentColor" d="M243.188 182.86 356.32 69.726c12.5-12.5 12.5-32.766 0-45.247L341.238 9.398c-12.504-12.503-32.77-12.503-45.25 0L182.86 122.528 69.727 9.374c-12.5-12.5-32.766-12.5-45.247 0L9.375 24.457c-12.5 12.504-12.5 32.77 0 45.25l113.152 113.152L9.398 295.99c-12.503 12.503-12.503 32.769 0 45.25L24.48 356.32c12.5 12.5 32.766 12.5 45.247 0l113.132-113.132L295.99 356.32c12.503 12.5 32.769 12.5 45.25 0l15.081-15.082c12.5-12.504 12.5-32.77 0-45.25zm0 0"></path>
+                                                </g>
+                                            </svg>
+                                            <svg class="checkmark" xml:space="preserve" style="enable-background:new 0 0 512 512" viewBox="0 0 24 24" y="0" x="0" height="10" width="10" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                                                <g>
+                                                    <path class="" data-original="#000000" fill="currentColor" d="M9.707 19.121a.997.997 0 0 1-1.414 0l-5.646-5.647a1.5 1.5 0 0 1 0-2.121l.707-.707a1.5 1.5 0 0 1 2.121 0L9 14.171l9.525-9.525a1.5 1.5 0 0 1 2.121 0l.707.707a1.5 1.5 0 0 1 0 2.121z"></path>
+                                                </g>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </label>
+                                <p class="switch-text-explain">PGCD facteur de...</p>
+                            </div>
+                            <div class="input-form-container input-factor-container">
+                                <div class="input-wrapper">
+                                    <input class="input-form input-factor" type="hidden" placeholder="Eg : 12,10" pattern="\d+(,\d+(\.\d+)?)*">
+                                    <button type="button" class="clear-button clear-button-factors fa-solid fa-xmark"></button>
+                                </div>
+                            </div>
+                            <button class="btn-submit-pgcd" type="submit">Calculer</button>
+                            <div class="message-user-container">
+                                <p class="message-user"></p>
                             </div>
                         </div>
-                        <button class="btn-submit-pgcd" type="submit">Calculer</button>
-                        <div class="message-user-container">
-                            <p class="message-user"></p>
+                    </form>
+                    <div class="result-container">
+                        <button class="copy">
+                            <span data-text-end="Copié!" data-text-initial="Copier" class="tooltip"></span>
+                            <span>
+                                <svg xml:space="preserve" style="enable-background:new 0 0 512 512" viewBox="0 0 6.35 6.35" y="0" x="0" height="20" width="20" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg" class="clipboard">
+                                    <g>
+                                      <path fill="currentColor" d="M2.43.265c-.3 0-.548.236-.573.53h-.328a.74.74 0 0 0-.735.734v3.822a.74.74 0 0 0 .735.734H4.82a.74.74 0 0 0 .735-.734V1.529a.74.74 0 0 0-.735-.735h-.328a.58.58 0 0 0-.573-.53zm0 .529h1.49c.032 0 .049.017.049.049v.431c0 .032-.017.049-.049.049H2.43c-.032 0-.05-.017-.05-.049V.843c0-.032.018-.05.05-.05zm-.901.53h.328c.026.292.274.528.573.528h1.49a.58.58 0 0 0 .573-.529h.328a.2.2 0 0 1 .206.206v3.822a.2.2 0 0 1-.206.205H1.53a.2.2 0 0 1-.206-.205V1.529a.2.2 0 0 1 .206-.206z"></path>
+                                    </g>
+                                </svg>
+                                <svg xml:space="preserve" style="enable-background:new 0 0 512 512" viewBox="0 0 24 24" y="0" x="0" height="18" width="18" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg" class="checkmark">
+                                    <g>
+                                        <path data-original="#000000" fill="currentColor" d="M9.707 19.121a.997.997 0 0 1-1.414 0l-5.646-5.647a1.5 1.5 0 0 1 0-2.121l.707-.707a1.5 1.5 0 0 1 2.121 0L9 14.171l9.525-9.525a1.5 1.5 0 0 1 2.121 0l.707.707a1.5 1.5 0 0 1 0 2.121z"></path>
+                                    </g>
+                                </svg>
+                           </span>
+                        </button>
+                        <div class="result-content">
+                            <p class="cp">PGCD de <span class="span-intergers-user-input"></span> : <span class="result-content result-content-pgcd"></span></p>
+                            <p class="cp">Diviseurs communs : <span class="result-content result-content-divisors"></span></p>
+                            <p class="cp">PPCM de <span class="span-intergers-user-input"></span> : <span class="result-content result-content-ppcm"></span></p>
+                            <p class="cp"><span class="span-result-content-pgcd-factor"></span> est un facteur de : <span class="result-content result-content-factors"></span></p>
                         </div>
                     </div>
-                </form>
-                <div class="result-container">
-                    <button class="copy">
-                        <span data-text-end="Copié!" data-text-initial="Copier" class="tooltip"></span>
-                        <span>
-                            <svg xml:space="preserve" style="enable-background:new 0 0 512 512" viewBox="0 0 6.35 6.35" y="0" x="0" height="20" width="20" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg" class="clipboard">
-                                <g>
-                                  <path fill="currentColor" d="M2.43.265c-.3 0-.548.236-.573.53h-.328a.74.74 0 0 0-.735.734v3.822a.74.74 0 0 0 .735.734H4.82a.74.74 0 0 0 .735-.734V1.529a.74.74 0 0 0-.735-.735h-.328a.58.58 0 0 0-.573-.53zm0 .529h1.49c.032 0 .049.017.049.049v.431c0 .032-.017.049-.049.049H2.43c-.032 0-.05-.017-.05-.049V.843c0-.032.018-.05.05-.05zm-.901.53h.328c.026.292.274.528.573.528h1.49a.58.58 0 0 0 .573-.529h.328a.2.2 0 0 1 .206.206v3.822a.2.2 0 0 1-.206.205H1.53a.2.2 0 0 1-.206-.205V1.529a.2.2 0 0 1 .206-.206z"></path>
-                                </g>
-                            </svg>
-                            <svg xml:space="preserve" style="enable-background:new 0 0 512 512" viewBox="0 0 24 24" y="0" x="0" height="18" width="18" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg" class="checkmark">
-                                <g>
-                                    <path data-original="#000000" fill="currentColor" d="M9.707 19.121a.997.997 0 0 1-1.414 0l-5.646-5.647a1.5 1.5 0 0 1 0-2.121l.707-.707a1.5 1.5 0 0 1 2.121 0L9 14.171l9.525-9.525a1.5 1.5 0 0 1 2.121 0l.707.707a1.5 1.5 0 0 1 0 2.121z"></path>
-                                </g>
-                            </svg>
-                       </span>
-                    </button>
-                    <div class="result-content">
-                        <p class="cp">PGCD de <span class="span-intergers-user-input"></span> : <span class="result-content result-content-pgcd"></span></p>
-                        <p class="cp">Diviseurs communs : <span class="result-content result-content-divisors"></span></p>
-                        <p class="cp">PPCM de <span class="span-intergers-user-input"></span> : <span class="result-content result-content-ppcm"></span></p>
-                        <p class="cp"><span class="span-result-content-pgcd-factor"></span> est un facteur de : <span class="result-content result-content-factors"></span></p>
+                </section>
+                <div class="bar-horizontal-container">
+                    <div class="bar-horizontal-content">
+                        <div class="btn-bar-container btn-pgcd-bar-container">
+                            <button class="btn-bar btn-pgcd-bar">pgcd</button>
+                        </div>
+                        <div class="btn-bar-container btn-ppcm-bar-container">
+                            <button class="btn-bar btn-ppcm-bar">ppcm</button>
+                        </div>
                     </div>
                 </div>
-            </section>
-            <div class="bar-horizontal-container">
-                <div class="bar-horizontal-content">
-                    <div class="btn-bar-container btn-pgcd-bar-container">
-                        <button class="btn-bar btn-pgcd-bar">pgcd</button>
+                <div class="informations-container pgcd-informations">
+                    <div class="header-information">C'est quoi le PGCD ?</div>
+                    <div class="information-content information-content-1">
+                        <div>
+                            <p>Le PGCD <strong>(Plus Grand Commun Diviseur)</strong> de deux nombres est le plus grand nombre entier qui peut diviser ces deux nombres sans laisser de reste.</p>
+                            <p>Il est très utile en mathématiques, notamment pour simplifier des fractions ou résoudre des problèmes d’arithmétique.</p>
+                        </div>
                     </div>
-                    <div class="btn-bar-container btn-ppcm-bar-container">
-                        <button class="btn-bar btn-ppcm-bar">ppcm</button>
+                    <div class="header-information">Un exemple théorique ?</div>
+                    <div class="information-content information-content-2">
+                        <div>
+                            <p>Le PGCD de <strong>12</strong> et <strong>18</strong> est <strong>6</strong>, car 6 est le plus grand nombre qui divise à la fois 12 et 18 :</p>
+                            <ul class="information-content-list">
+                                <li><strong>12</strong> se divise par : 1, 2, 3, 4, 6, 12</li>
+                                <li><strong>18</strong> se divise par : 1, 2, 3, 6, 9, 18</li>
+                            </ul>
+                            <p>Les diviseurs communs sont <strong>1, 2, 3 et 6</strong> → Le plus grand est <strong>6</strong></p>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="informations-container pgcd-informations">
-                <div class="header-information">C'est quoi le PGCD ?</div>
-                <div class="information-content information-content-1">
-                    <div>
-                        <p>Le PGCD <strong>(Plus Grand Commun Diviseur)</strong> de deux nombres est le plus grand nombre entier qui peut diviser ces deux nombres sans laisser de reste.</p>
-                        <p>Il est très utile en mathématiques, notamment pour simplifier des fractions ou résoudre des problèmes d’arithmétique.</p>
-                    </div>
-                </div>
-                <div class="header-information">Un exemple théorique ?</div>
-                <div class="information-content information-content-2">
-                    <div>
-                        <p>Le PGCD de <strong>12</strong> et <strong>18</strong> est <strong>6</strong>, car 6 est le plus grand nombre qui divise à la fois 12 et 18 :</p>
-                        <ul class="information-content-list">
-                            <li><strong>12</strong> se divise par : 1, 2, 3, 4, 6, 12</li>
-                            <li><strong>18</strong> se divise par : 1, 2, 3, 6, 9, 18</li>
-                        </ul>
-                        <p>Les diviseurs communs sont <strong>1, 2, 3 et 6</strong> → Le plus grand est <strong>6</strong></p>
-                    </div>
-                </div>
-                <div class="header-information">Un exemple concret ?</div>
-                <div class="information-content information-content-3">
-                    <div>
-                        <h2 class="h2-information-content-3">Problème : Partager un terrain en parcelles carrées</h2>
-                        <p>Imaginons que vous possédez un terrain rectangulaire de <strong>168 mètres</strong> de long et <strong>120 mètres</strong> de large. Vous voulez le diviser en parcelles carrées de la plus grande taille possible, sans gaspillage de terrain.</p>
-
-                        <h2 class="h2-information-content-3">Solution avec le PGCD</h2>
-                        <p>La question revient à chercher la plus grande longueur de côté possible pour ces carrés. Cette longueur correspond au <strong>Plus Grand Diviseur Commun (PGCD)</strong> des dimensions du terrain : <strong>168 et 120</strong>.</p>
-
-                        <h3 class="h3-information-content-3">Calcul du PGCD(168, 120)</h3>
-                        <p>On peut le trouver avec l'algorithme d'Euclide :</p>
-                        <ul class="information-content-list">
-                            <li>168 ÷ 120 = 1, reste <strong>48</strong>.</li>
-                            <li>120 ÷ 48 = 2, reste <strong>24</strong>.</li>
-                            <li>48 ÷ 24 = 2, reste <strong>0</strong>.</li>
-                        </ul>
-                        <p><strong>Le PGCD de 168 et 120 est 24.</strong></p>
-                    
-                        <h3 class="h3-information-content-3">Conclusion</h3>
-                        <p>La plus grande taille possible pour les parcelles carrées est <strong>24 mètres × 24 mètres</strong>. En divisant :</p>
-                        <ul class="information-content-list">
-                            <li>168 ÷ 24 = <strong>7</strong> carrés en longueur.</li>
-                            <li>120 ÷ 24 = <strong>5</strong> carrés en largeur.</li>
-                        </ul>
-                        <p>On obtient <strong>7 × 5 = 35 parcelles carrées</strong>, sans perte d’espace.</p>
-                    
-                        <p>C’est un exemple concret où le PGCD permet d'optimiser l’utilisation d’un espace de manière rationnelle et efficace. Ce principe est utilisé dans :</p>
-                        <ul class="information-content-list">
-                            <li><strong>L’aménagement du territoire</strong></li>
-                            <li><strong>La menuiserie</strong></li>
-                            <li><strong>La cryptographie</strong> (exemple : algorithme RSA)</li>
-                        </ul>
+                    <div class="header-information">Un exemple concret ?</div>
+                    <div class="information-content information-content-3">
+                        <div>
+                            <h2 class="h2-information-content-3">Problème : Partager un terrain en parcelles carrées</h2>
+                            <p>Imaginons que vous possédez un terrain rectangulaire de <strong>168 mètres</strong> de long et <strong>120 mètres</strong> de large. Vous voulez le diviser en parcelles carrées de la plus grande taille possible, sans gaspillage de terrain.</p>
+                            <h2 class="h2-information-content-3">Solution avec le PGCD</h2>
+                            <p>La question revient à chercher la plus grande longueur de côté possible pour ces carrés. Cette longueur correspond au <strong>Plus Grand Diviseur Commun (PGCD)</strong> des dimensions du terrain : <strong>168 et 120</strong>.</p>
+                            <h3 class="h3-information-content-3">Calcul du PGCD(168, 120)</h3>
+                            <p>On peut le trouver avec l'algorithme d'Euclide :</p>
+                            <ul class="information-content-list">
+                                <li>168 ÷ 120 = 1, reste <strong>48</strong>.</li>
+                                <li>120 ÷ 48 = 2, reste <strong>24</strong>.</li>
+                                <li>48 ÷ 24 = 2, reste <strong>0</strong>.</li>
+                            </ul>
+                            <p><strong>Le PGCD de 168 et 120 est 24.</strong></p>
+                        
+                            <h3 class="h3-information-content-3">Conclusion</h3>
+                            <p>La plus grande taille possible pour les parcelles carrées est <strong>24 mètres × 24 mètres</strong>. En divisant :</p>
+                            <ul class="information-content-list">
+                                <li>168 ÷ 24 = <strong>7</strong> carrés en longueur.</li>
+                                <li>120 ÷ 24 = <strong>5</strong> carrés en largeur.</li>
+                            </ul>
+                            <p>On obtient <strong>7 × 5 = 35 parcelles carrées</strong>, sans perte d’espace.</p>
+                        
+                            <p>C’est un exemple concret où le PGCD permet d'optimiser l’utilisation d’un espace de manière rationnelle et efficace. Ce principe est utilisé dans :</p>
+                            <ul class="information-content-list">
+                                <li><strong>L’aménagement du territoire</strong></li>
+                                <li><strong>La menuiserie</strong></li>
+                                <li><strong>La cryptographie</strong> (exemple : algorithme RSA)</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="informations-container ppcm-informations hide-ppcm-informations">
-                <div class="header-information">C'est quoi le PPCM ?</div>
-                <div class="information-content information-content-1">
-                    <div>
-                        <p>Le PPCM <strong>(Plus Petit Commun Multiple)</strong> de plusieurs nombres est le plus petit nombre qui est un multiple de chacun d’eux.</p>
-                        <p>Il est super pratique en maths et dans la vraie vie pour :</p>
-                        <ul class="information-content-list">
-                            <li>Synchroniser des événements répétitifs</li>
-                            <li>Travailler avec des fractions (trouver un dénominateur commun)</li>
-                            <li>Organiser des plannings qui reviennent à intervalles réguliers</li>
-                        </ul>
+                <div class="informations-container ppcm-informations hide-ppcm-informations">
+                    <div class="header-information">C'est quoi le PPCM ?</div>
+                    <div class="information-content information-content-1">
+                        <div>
+                            <p>Le PPCM <strong>(Plus Petit Commun Multiple)</strong> de plusieurs nombres est le plus petit nombre qui est un multiple de chacun d’eux.</p>
+                            <p>Il est super pratique en maths et dans la vraie vie pour :</p>
+                            <ul class="information-content-list">
+                                <li>Synchroniser des événements répétitifs</li>
+                                <li>Travailler avec des fractions (trouver un dénominateur commun)</li>
+                                <li>Organiser des plannings qui reviennent à intervalles réguliers</li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-                <div class="header-information">Un exemple théorique ?</div>
-                <div class="information-content information-content-2">
-                    <div>
-                        <p>Prenons deux nombres : 6 et 8.</p>
-                        <p>Le <strong>PPCM</strong> est le plus petit nombre qui est multiple de 6 et 8 en même temps.</p>
-                        <p>1. Listons les multiples de chaque nombre :</p>
-                        <ul class="information-content-list">
-                            <li>Multiples de 6 : 6, 12, 18, 24, 30, 36, 42…</li>
-                            <li>Multiples de 8 : 8, 16, 24, 32, 40, 48…</li>
-                        </ul>
-                        <p>2. Quel est le plus petit nombre commun ?</p>
-                        <p>Regardons ces listes… le premier nombre en commun est 24 !</p>
-                        <p>Donc, le <strong>PPCM</strong> de 6 et 8 est <strong>24</strong>.</p>
+                    <div class="header-information">Un exemple théorique ?</div>
+                    <div class="information-content information-content-2">
+                        <div>
+                            <p>Prenons deux nombres : 6 et 8.</p>
+                            <p>Le <strong>PPCM</strong> est le plus petit nombre qui est multiple de 6 et 8 en même temps.</p>
+                            <p>1. Listons les multiples de chaque nombre :</p>
+                            <ul class="information-content-list">
+                                <li>Multiples de 6 : 6, 12, 18, 24, 30, 36, 42…</li>
+                                <li>Multiples de 8 : 8, 16, 24, 32, 40, 48…</li>
+                            </ul>
+                            <p>2. Quel est le plus petit nombre commun ?</p>
+                            <p>Regardons ces listes… le premier nombre en commun est 24 !</p>
+                            <p>Donc, le <strong>PPCM</strong> de 6 et 8 est <strong>24</strong>.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="header-information">Un exemple concret ?</div>
-                <div class="information-content information-content-3">
-                    <div>
-                        <p>Imaginons que trois feux tricolores fonctionnent avec des cycles différents :</p>
-                        <ul class="information-content-list">
-                            <li>Le <strong>premier feu</strong> change toutes les <strong>45 secondes</strong></li>
-                            <li>Le <strong>deuxième feu</strong> toutes les <strong>48 secondes</strong></li>
-                            <li>Le <strong>troisième feu</strong> toutes les <strong>51 secondes</strong></li>
-                        </ul>
-
-                        <p>Si on attend assez longtemps, il y aura un moment où les trois feux changeront en même temps.</p>
-                        <p>➡ Ce moment correspond au PPCM de 45, 48 et 51.</p>
-                        <p>➡ Autrement dit, c’est le plus petit temps auquel tous les cycles se synchronisent.</p>
-                    
-                        <h3 class="h3-information-content-3">Calcul du PPCM</h3>
-                        <p>Dans ce cas, le <strong>PPCM(45, 48, 51)</strong> = <strong>12 240 secondes</strong> (soit <strong>3h24min</strong>).</p>
-                    
-                        <h3 class="h3-information-content-3">Pourquoi c'est utile ?</h3>
-                        <ul class="information-content-list">
-                            <li>Synchroniser des événements répétitifs</li>
-                            <li>Travailler avec des fractions (trouver un dénominateur commun)</li>
-                            <li>Organiser des plannings qui reviennent à intervalles réguliers</li>
-                        </ul>
+                    <div class="header-information">Un exemple concret ?</div>
+                    <div class="information-content information-content-3">
+                        <div>
+                            <p>Imaginons que trois feux tricolores fonctionnent avec des cycles différents :</p>
+                            <ul class="information-content-list">
+                                <li>Le <strong>premier feu</strong> change toutes les <strong>45 secondes</strong></li>
+                                <li>Le <strong>deuxième feu</strong> toutes les <strong>48 secondes</strong></li>
+                                <li>Le <strong>troisième feu</strong> toutes les <strong>51 secondes</strong></li>
+                            </ul>
+                            <p>Si on attend assez longtemps, il y aura un moment où les trois feux changeront en même temps.</p>
+                            <p>➡ Ce moment correspond au PPCM de 45, 48 et 51.</p>
+                            <p>➡ Autrement dit, c’est le plus petit temps auquel tous les cycles se synchronisent.</p>
+                        
+                            <h3 class="h3-information-content-3">Calcul du PPCM</h3>
+                            <p>Dans ce cas, le <strong>PPCM(45, 48, 51)</strong> = <strong>12 240 secondes</strong> (soit <strong>3h24min</strong>).</p>
+                        
+                            <h3 class="h3-information-content-3">Pourquoi c'est utile ?</h3>
+                            <ul class="information-content-list">
+                                <li>Synchroniser des événements répétitifs</li>
+                                <li>Travailler avec des fractions (trouver un dénominateur commun)</li>
+                                <li>Organiser des plannings qui reviennent à intervalles réguliers</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>

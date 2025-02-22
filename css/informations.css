@@ -22,7 +22,6 @@
   padding: 1.25rem;
   font-size: 1.25rem;
   font-weight: 600;
-  cursor: pointer;
   transition: all var(--transition-speed) ease;
   position: relative;
   display: flex;
@@ -34,14 +33,6 @@
   content: '▶';
   font-size: 0.9em;
   transition: transform var(--transition-speed) ease;
-}
-
-.header-information.active::before {
-  transform: rotate(90deg);
-}
-
-.header-information:hover {
-  background: var(--secondary-color);
 }
 
 .information-content {

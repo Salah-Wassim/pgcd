@@ -1,68 +1,134 @@
-/*COLLAPSIBLES*/
-.collapsibles-container{padding: 0 15%;}
-
-.btn-collapsible {
-    background-color: #fff;
-    color: #000;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 15px;
+:root {
+  --primary-color: #6f42c1;
+  --secondary-color: #8a63d2;
+  --background-color: #f8fafc;
+  --text-color: #1e293b;
+  --heading-color: #0f172a;
+  --border-radius: 8px;
+  --transition-speed: 0.3s;
 }
 
-.active, .btn-collapsible:hover {
-  background-color: #ccc;
+.faq-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.collapsibles-container {
+  background: white;
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.h3-faq {
+  color: var(--heading-color);
+  margin: 2rem 0 1rem;
+  padding-bottom: 0.5rem;
+  position: relative;
+  font-size: 1.25rem;
+}
+
+.h3-faq::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--primary-color);
+}
+
+.btn-collapsible {
+  background: white;
+  color: var(--heading-color);
+  cursor: pointer;
+  padding: 1.25rem;
+  width: 100%;
+  border: none;
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 600;
+  border-bottom: 2px solid #e2e8f0;
+  transition: all var(--transition-speed) ease;
+  position: relative;
 }
 
 .btn-collapsible:after {
   content: '\002B';
-  color: #000;
+  color: var(--primary-color);
   font-weight: bold;
-  float: right;
-  margin-left: 5px;
+  position: absolute;
+  right: 1rem;
+  transition: transform var(--transition-speed) ease;
+}
+
+.btn-collapsible:hover {
+  background: rgba(111, 66, 193, 0.05);
+}
+
+.active {
+  background: rgba(111, 66, 193, 0.05);
+  border-bottom-color: var(--primary-color);
 }
 
 .active:after {
   content: "\2212";
+  transform: rotate(180deg);
 }
 
 .collapsible-content {
-  padding: 0 18px;
+  padding: 0 1.25rem;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.2s ease-out;
-  background-color: #f1f1f1;
+  transition: max-height var(--transition-speed) ease-out;
+  background: white;
 }
-.collapsible-content p{
-  padding: 15px 0;
-  font-size: 14px;
+
+.collapsible-content p {
+  padding: 1.25rem 0;
+  color: var(--text-color);
+  line-height: 1.7;
 }
 
 .collapsible-list {
-  padding-left: 20px;
+  padding-left: 0;
   list-style: none;
-  padding: 0;
 }
 
 .collapsible-list li {
-  background: url('https://img.icons8.com/ios-filled/15/007bff/checkmark.png') no-repeat left center;
-  background-size: 15px;
-  padding-left: 25px;
-  margin-bottom: 10px;
+  background: url('https://img.icons8.com/ios-filled/20/6f42c1/checkmark.png') no-repeat left center;
+  background-size: 20px;
+  padding-left: 30px;
+  margin: 0.75rem 0;
+  color: var(--text-color);
 }
 
-/*FAQs*/
-
-.h3-faq{margin: 15px 0;}
-.collapsibles-evolutions{margin-bottom: 20px;}
-
-@media screen and (max-width: 912px) {
-  .collapsibles-container{padding: 0;}
+.collapsible-list a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
 }
 
-@media screen and (max-width: 600px) {
-  .collapsibles-container{padding: 0 20px;}
+.collapsible-list a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .faq-section {
+      padding: 1rem;
+  }
+  
+  .collapsibles-container {
+      padding: 1rem;
+  }
+  
+  .btn-collapsible {
+      padding: 1rem;
+      font-size: 0.95rem;
+  }
+  
+  .collapsible-content p {
+      padding: 1rem 0;
+  }
 }

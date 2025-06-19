@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Schoolbell&display=swap');
 
 .header{
-    background-color:#f1f1f1;
     position: sticky;
     top:0;
     z-index: 100;

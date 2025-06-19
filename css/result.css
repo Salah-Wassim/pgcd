@@ -11,7 +11,11 @@
     width: 280px;
     height: 200px;
     padding: 19px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8);
+    box-shadow: 0 8px 24px rgba(58, 37, 111, 0.3);
+    transition: transform 0.2s ease;
+}
+.result-container:hover {
+    transform: translateY(-3px);
 }
 .result-content{
     padding: 8px;

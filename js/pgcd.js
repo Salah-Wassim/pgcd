@@ -101,17 +101,42 @@ function displayListHistory(){
 
   listHistory.forEach((element, index) => {
     let historyElementContainer = document.createElement("div");
-    historyElementContainer.style.padding = "10px 0"
-    historyElementContainer.style.borderBottom = "solid 1px #ccc"
+    historyElementContainer.style.padding = "10px 12px";
+    historyElementContainer.style.borderBottom = "1px solid #e2e2e2";
     historyElementContainer.style.position = "relative";
-    historyElementContainer.textContent = element
+    historyElementContainer.style.display = "flex";
+    historyElementContainer.style.alignItems = "center";
+    historyElementContainer.style.justifyContent = "space-between";
+    historyElementContainer.style.fontSize = "14px";
+    historyElementContainer.style.color = "#2a2a2a";
+    historyElementContainer.style.transition = "background-color 0.2s ease";
+
+    historyElementContainer.addEventListener("mouseenter", () => {
+      historyElementContainer.style.backgroundColor = "#f6f4fb";
+    });
+    historyElementContainer.addEventListener("mouseleave", () => {
+        historyElementContainer.style.backgroundColor = "transparent";
+    });
+
+    historyElementContainer.textContent = element;
 
     let btnOptionsMenu = document.createElement("button");
     btnOptionsMenu.textContent = "●●●";
     btnOptionsMenu.style.border = "none";
-    btnOptionsMenu.style.paddingLeft = "5px"
+    btnOptionsMenu.style.padding = "4px 8px";
     btnOptionsMenu.style.cursor = "pointer";
+    btnOptionsMenu.style.background = "none";
+    btnOptionsMenu.style.fontSize = "18px";
+    btnOptionsMenu.style.color = "#5e4ab0";
+    btnOptionsMenu.style.borderRadius = "6px";
+    btnOptionsMenu.style.transition = "background-color 0.2s ease";
 
+    btnOptionsMenu.addEventListener("mouseenter", () => {
+      btnOptionsMenu.style.backgroundColor = "rgba(94, 74, 176, 0.1)";
+    });
+    btnOptionsMenu.addEventListener("mouseleave", () => {
+      btnOptionsMenu.style.backgroundColor = "transparent";
+    });
     btnOptionsMenu.addEventListener("click", (event) => {
       openOptionsMenu(event, element, index);
     });
@@ -129,30 +154,35 @@ function openOptionsMenu(event, element, index){
   const rect = event.target.getBoundingClientRect();
 
   modalOptionsMenu = document.createElement("div");
-  modalOptionsMenu.style.display = "flex"
-  modalOptionsMenu.style.flexDirection = "column"
-  modalOptionsMenu.style.alignItems = "start"
-  modalOptionsMenu.style.gap = "10px"
+  modalOptionsMenu.style.display = "flex";
+  modalOptionsMenu.style.flexDirection = "column";
+  modalOptionsMenu.style.alignItems = "start";
+  modalOptionsMenu.style.gap = "6px";
   modalOptionsMenu.style.position = "absolute";
-  modalOptionsMenu.style.top = `${rect.bottom + window.scrollY}px`;
+  modalOptionsMenu.style.top = `${rect.bottom + window.scrollY + 4}px`;
   modalOptionsMenu.style.left = `${rect.left + window.scrollX}px`;
-  modalOptionsMenu.style.background = "white";
-  modalOptionsMenu.style.border = "1px solid #ccc";
+  modalOptionsMenu.style.background = "#ffffff";
+  modalOptionsMenu.style.border = "1px solid #dcd6f3";
   modalOptionsMenu.style.padding = "10px";
-  modalOptionsMenu.style.boxShadow = "0px 4px 6px rgba(0,0,0,0.1)";
-  modalOptionsMenu.style.borderRadius = "5px";
+  modalOptionsMenu.style.boxShadow = "0 8px 20px rgba(58, 37, 111, 0.15)";
+  modalOptionsMenu.style.borderRadius = "8px";
   modalOptionsMenu.style.zIndex = "1000";
-  modalOptionsMenu.style.width = "150px"
+  modalOptionsMenu.style.width = "160px";
+  modalOptionsMenu.style.fontFamily = "system-ui, sans-serif";
+  modalOptionsMenu.style.fontSize = "14px";
 
   let btnDeleteHistory = document.createElement("button");
-  btnDeleteHistory.style.border = "none"
-  btnDeleteHistory.style.padding = "8px 0"
-  btnDeleteHistory.style.fontSize = "14px"
-  btnDeleteHistory.style.cursor = "pointer"
-  btnDeleteHistory.style.width = "100%"
-  btnDeleteHistory.style.textAlign = "start"
-  btnDeleteHistory.style.paddingLeft = "8px"
   btnDeleteHistory.textContent = "❌ Supprimer";
+  btnDeleteHistory.style.border = "none";
+  btnDeleteHistory.style.padding = "8px 10px";
+  btnDeleteHistory.style.cursor = "pointer";
+  btnDeleteHistory.style.width = "100%";
+  btnDeleteHistory.style.textAlign = "left";
+  btnDeleteHistory.style.borderRadius = "5px";
+  btnDeleteHistory.style.background = "transparent";
+  btnDeleteHistory.style.color = "#b30000";
+  btnDeleteHistory.onmouseenter = () => btnDeleteHistory.style.background = "#fff1f1";
+  btnDeleteHistory.onmouseleave = () => btnDeleteHistory.style.background = "transparent";
   btnDeleteHistory.onclick = () => {
     removeHistoryElement(index)
     closeOptionsMenu();
@@ -160,13 +190,16 @@ function openOptionsMenu(event, element, index){
 
   let btnCopyElementHistory = document.createElement("button");
   btnCopyElementHistory.textContent = "📋 Copier";
-  btnCopyElementHistory.style.border = "none"
-  btnCopyElementHistory.style.padding = "8px 0"
-  btnCopyElementHistory.style.fontSize = "14px"
-  btnCopyElementHistory.style.cursor = "pointer"
-  btnCopyElementHistory.style.width = "100%"
-  btnCopyElementHistory.style.textAlign = "start"
-  btnCopyElementHistory.style.paddingLeft = "8px"
+  btnCopyElementHistory.style.border = "none";
+  btnCopyElementHistory.style.padding = "8px 10px";
+  btnCopyElementHistory.style.cursor = "pointer";
+  btnCopyElementHistory.style.width = "100%";
+  btnCopyElementHistory.style.textAlign = "left";
+  btnCopyElementHistory.style.borderRadius = "5px";
+  btnCopyElementHistory.style.background = "transparent";
+  btnCopyElementHistory.style.color = "#3a256f";
+  btnCopyElementHistory.onmouseenter = () => btnCopyElementHistory.style.background = "#f4f1fc";
+  btnCopyElementHistory.onmouseleave = () => btnCopyElementHistory.style.background = "transparent";
   btnCopyElementHistory.onclick = () => {
     copyElementHistory(element)
     closeOptionsMenu();

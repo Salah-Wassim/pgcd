@@ -49,7 +49,7 @@
   flex-wrap: wrap;
 }
 
-.cgu-link, .ml-link, .faq-link {
+.cgu-link, .ml-link, .faq-link, .contact-link {
   color: var(--footer-text);
   text-decoration: none;
   font-family: 'Inter', sans-serif;
@@ -61,7 +61,7 @@
   position: relative;
 }
 
-.cgu-link::after, .ml-link::after, .faq-link::after {
+.cgu-link::after, .ml-link::after, .faq-link::after, .contact-link::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -72,11 +72,11 @@
   transition: all var(--transition-speed) ease;
 }
 
-.cgu-link:hover, .ml-link:hover, .faq-link:hover {
+.cgu-link:hover, .ml-link:hover, .faq-link:hover, .contact-link:hover {
   color: var(--footer-hover);
 }
 
-.cgu-link:hover::after, .ml-link:hover::after, .faq-link:hover::after {
+.cgu-link:hover::after, .ml-link:hover::after, .faq-link:hover::after, .contact-link:hover::after {
   width: 100%;
   left: 0;
 }

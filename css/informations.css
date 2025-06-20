@@ -1,7 +1,7 @@
 :root {
   --primary-color: #6f42c1;
   --secondary-color: #8a63d2;
-  --background-color: #f8fafc;
+  --background-color: #f8f7fc;
   --text-color: #1e293b;
   --heading-color: #0f172a;
   --border-radius: 8px;
@@ -36,7 +36,7 @@
 }
 
 .information-content {
-  background: var(--background-color);
+  background: #f8f7fc;
   padding: 1.5rem;
   border-left: 4px solid var(--primary-color);
   transition: all var(--transition-speed) ease;

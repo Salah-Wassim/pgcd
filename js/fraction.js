@@ -7,7 +7,9 @@ const numeratorInput = document.getElementById("numerator");
 const denominatorInput = document.getElementById("denominator")
 const simplicationSubmit = document.querySelector(".btn-submit-fraction");
 const messageError = document.querySelector('.message-error')
-const result = document.getElementById("result")
+const resultNumerator = document.getElementById("result-numerator")
+const resultDenominator = document.getElementById("result-denominator")
+const resultCard = document.getElementById('result');
 
 function resetAll(){
   pgcd=null
@@ -16,7 +18,7 @@ function resetAll(){
   resultSimplication=null
   message="";
   handleMessage('');
-  
+  resultCard.classList.remove('show');
 }
 
 function handleMessage(message){
@@ -32,12 +34,14 @@ simplicationSubmit.addEventListener('click', function (e){
     let denominatorInputValue = denominatorInput.value
 
     if(!numeratorInputValue || !denominatorInputValue){
-        return handleMessage("Tous les champs doivent être complétés")
+      resultCard.classList.remove('show');
+      return handleMessage("Tous les champs doivent être complétés")
     }
 
     let regex = /^\d+$/;
     if(!regex.test(numeratorInputValue) || !regex.test(denominatorInputValue)){
-        return handleMessage("Le format est invalide")
+      resultCard.classList.remove('show');
+      return handleMessage("Le format est invalide")
     }
     else{
         let intNumerator = Number(numeratorInputValue)
@@ -49,13 +53,21 @@ simplicationSubmit.addEventListener('click', function (e){
 
 function simplifyingFraction(a, b){
 
-    if (!a || !b) return false
+    if (a == null || b == null) return false
 
     if(isNaN(a) && isNaN(b)) return false
 
+    if (b === 0){
+      console.log("Hello")
+      resultCard.classList.remove('show');
+      return handleMessage("Le dénominateur ne peut pas être zéro")
+    }
+
     if(a === b){
-        resultSimplication="1"
-        return result.innerHTML = resultSimplication
+      resultNumerator.innerHTML=1
+      resultDenominator.innerHTML=1
+      resultCard.classList.add("show", "success")
+      return false
     }
 
     const intValueArray = [a, b]
@@ -65,16 +77,13 @@ function simplifyingFraction(a, b){
     if(allResults[0]){
         pgcd = allResults[0]
 
-        // console.log("pgcd", pgcd)
-
         const numeratorDivisionResult = a / pgcd
         const denominatorDivisionResult = b / pgcd
 
-        // console.log("numeratorResult : ", numeratorDivisionResult)
-        // console.log("denominatorResult : ", denominatorDivisionResult)
-
-        resultSimplication = `${numeratorDivisionResult} / ${denominatorDivisionResult}`
-        return result.innerHTML = resultSimplication
+        resultNumerator.innerHTML=numeratorDivisionResult
+        resultDenominator.innerHTML=denominatorDivisionResult
+        
+        resultCard.classList.add("show", "success")
     }
 }
 

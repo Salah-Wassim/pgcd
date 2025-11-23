@@ -36,10 +36,10 @@
                     <button class="btn-burger fa-solid fa-bars"></button>
                 </div>
                 <div class="header-right-content">
+                    <a href="index.html">PGCD</a>
+                    <a href="fraction.html">Fractions</a>
                     <a href="liens.html">Liens</a>
                     <a href="a-propos.html">À propos</a>
-                    <a href="fraction.html">Fractions</a>
-                    <a href="index.html">PGCD</a>
                 </div>
             </div>
         </header>
@@ -48,17 +48,40 @@
             <h2>Binvenue sur votre nouvel outil. Simplifiez vos fractions en un clic !</h2>
         </div>
         <section class="fractions">
-            <p class="explanation">Entrez le numérateur et le dénominateur pour simplifier votre fraction. <br>Exemple : Pour 4/8, entrez 4 en haut et 8 en bas. Cela simplifiera en 1/2 !</p>
-            <form id="fraction-form">
-                <span class="message-error"></span>
-                <div class="fraction-input">
-                    <input type="text" id="numerator" placeholder="Numérateur" required>
-                    <div class="fraction-bar"></div>
-                    <input type="text" id="denominator" placeholder="Dénominateur" required>
+            <div class="fractions-content">
+                <p class="explanation">Entrez le numérateur et le dénominateur pour simplifier votre fraction. <br>Exemple : Pour 4/8, entrez 4 en haut et 8 en bas. Cela simplifiera en 1/2 !</p>
+                <form id="fraction-form" class="fraction-form">
+                    <div class="fraction-input-container">
+                        <div class="fraction-input">
+                            <input type="text" id="numerator" placeholder="Numérateur" required>
+                            <div class="fraction-bar"></div>
+                            <input type="text" id="denominator" placeholder="Dénominateur" required>
+                        </div>
+                        <div class="input-labels">
+                            <span class="label">Numérateur</span>
+                            <span class="label">Dénominateur</span>
+                        </div>
+                    </div>
+
+                    <button class="btn-submit-fraction" type="submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path fill-rule="evenodd" d="M14.615 1.595a.75.75 0 01.359.852L12.982 9.75h7.268a.75.75 0 01.548 1.262l-10.5 11.25a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262l10.5-11.25a.75.75 0 01.913-.143z" clip-rule="evenodd" />
+                        </svg>
+                        Simplifier
+                    </button>
+
+                    <span class="message-error"></span>
+                </form>
+
+                <div id="result" class="result-card">
+                    <div class="result-fraction">
+                        <span id="result-numerator"></span>
+                        <div class="fraction-bar"></div>
+                        <span id="result-denominator"></span>
+                    </div>
+                    <p class="result-explanation">Votre fraction simplifiée</p>
                 </div>
-                <button class="btn-submit-fraction" type="submit">Simplifier</button>
-            </form>
-            <div id="result"></div>
+            </div>
         </section>
         <footer class="footer">
             <p>&copy; 2025 - pgcd - Tous droits réservés.</p>
@@ -147,5 +170,6 @@
         </footer>
     </div>
     <script type="text/javascript" src="js/fraction.js"></script>
+    <script type="text/javascript" src="js/burger.js"></script>
 </body>
 </html>

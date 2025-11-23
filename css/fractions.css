@@ -1,0 +1,66 @@
+.fractions {
+    display: flex;
+    flex-direction: column;
+}
+.explanation {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 2rem;
+}
+.fraction-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+}
+
+.fraction-input input {
+    padding: 10px;
+    font-size: 18px;
+    text-align: center;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    transition: border-color 0.3s;
+    margin-bottom: 1rem;
+}
+
+.fraction-input input:focus {
+    border-color: #4a90e2;
+    outline: none;
+}
+
+.fraction-bar {
+    margin-bottom: 1rem;
+    width: 60px;
+    height: 2px;
+    background-color: #333
+}
+
+.label {
+    font-size: 12px;
+    color: #666;
+    margin-top: 5px;
+}
+
+button {
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #357bd8;
+}

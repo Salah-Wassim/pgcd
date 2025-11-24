@@ -9,6 +9,8 @@ const simplicationSubmit = document.querySelector(".btn-submit-fraction");
 const messageError = document.querySelector('.message-error')
 const resultNumerator = document.getElementById("result-numerator")
 const resultDenominator = document.getElementById("result-denominator")
+const startNumerator = document.getElementById("start-numerator")
+const startDenominator = document.getElementById("start-denominator")
 const resultCard = document.getElementById('result');
 
 function resetAll(){
@@ -48,6 +50,8 @@ simplicationSubmit.addEventListener('click', function (e){
         let intDenominateur = Number(denominatorInputValue)
 
         simplifyingFraction(intNumerator, intDenominateur)
+        numeratorInput.value=""
+        denominatorInput.value=""
     }
 })
 
@@ -64,6 +68,8 @@ function simplifyingFraction(a, b){
     }
 
     if(a === b){
+      startNumerator.innerHTML=a
+      startDenominator.innerHTML=b
       resultNumerator.innerHTML=1
       resultDenominator.innerHTML=1
       resultCard.classList.add("show", "success")
@@ -80,6 +86,8 @@ function simplifyingFraction(a, b){
         const numeratorDivisionResult = a / pgcd
         const denominatorDivisionResult = b / pgcd
 
+        startNumerator.innerHTML=a
+        startDenominator.innerHTML=b
         resultNumerator.innerHTML=numeratorDivisionResult
         resultDenominator.innerHTML=denominatorDivisionResult
         

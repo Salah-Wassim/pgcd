@@ -12,15 +12,8 @@
     --transition: all 0.3s ease;
 }
 .fractions {
-    background-color: white;
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
     padding: 40px;
     width: 100%;
-    transition: var(--transition);
-}
-.fractions:hover {
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
 }
 .header {
     text-align: center;
@@ -158,8 +151,20 @@
     display: none;
 }
 .result-card.show {
-    display: block;
+    /* display: block; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     animation: fadeIn 0.5s ease;
+}
+.container-fraction-user{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.equal{
+    margin: 0 1rem;
+    /* padding-top: 26px; */
 }
 .result-card.success {
     border-left: 4px solid var(--success-color);
@@ -168,9 +173,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 15px;
+    justify-content: space-between;
 }
-.result-fraction span {
+.result-content{
+    display: flex;
+    justify-content: center;
+}
+.result-fraction span, .fraction-user span {
     font-size: 24px;
     font-weight: 700;
 }
@@ -181,7 +190,7 @@
     font-size: 15px;
     font-weight: normal;
     color: var(--light-text);
-    margin-top: 10px;
+    margin-bottom: 15px;
 }
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }

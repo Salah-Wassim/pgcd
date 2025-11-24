@@ -1,0 +1,212 @@
+:root {
+    --primary-color: #6f42c1;
+    --primary-dark: #5f28d6;
+    --secondary-color: #8a63d2;
+    --light-bg: #f8f9fa;
+    --dark-text: #2b2d42;
+    --light-text: #6c757d;
+    --success-color: #4bb543;
+    --error-color: #e63946;
+    --border-radius: 12px;
+    --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    --transition: all 0.3s ease;
+}
+.fractions {
+    padding: 40px;
+    width: 100%;
+}
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.header h1 {
+    color: var(--dark-text);
+    font-size: 28px;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+.header p {
+    color: var(--light-text);
+    font-size: 16px;
+}
+.explanation {
+    background-color: var(--light-bg);
+    padding: 18px;
+    border-radius: var(--border-radius);
+    font-size: 15px;
+    color: var(--light-text);
+    margin-bottom: 30px;
+    line-height: 1.6;
+    border-left: 4px solid var(--primary-color);
+}
+.fraction-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    /* margin-bottom: 2rem; */
+}
+.fraction-input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+.fraction-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+.fraction-input input {
+    padding: 16px;
+    font-size: 20px;
+    text-align: center;
+    border: 2px solid #e9ecef;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    width: 100%;
+    max-width: 200px;
+    font-weight: 600;
+    color: var(--dark-text);
+    background-color: #f8f9fa;
+}
+.fraction-input input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    background-color: white;
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+}
+.fraction-input input::placeholder {
+    color: #adb5bd;
+    font-weight: normal;
+}
+.fraction-bar {
+    width: 80px;
+    height: 3px;
+    background-color: var(--dark-text);
+    margin: 12px 0;
+    border-radius: 2px;
+}
+.input-labels {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 200px;
+    margin-top: 8px;
+}
+.label {
+    font-size: 13px;
+    color: var(--light-text);
+    font-weight: 500;
+}
+.btn-submit-fraction {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: none;
+    padding: 16px 24px;
+    font-size: 17px;
+    font-weight: 600;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.btn-submit-fraction:hover {
+    background: linear-gradient(135deg, var(--primary-dark), #6511a8);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(67, 97, 238, 0.4);
+}
+.btn-submit-fraction:active {
+    transform: translateY(0);
+}
+.btn-submit-fraction svg {
+    width: 18px;
+    height: 18px;
+}
+.message-error {
+    color: var(--error-color);
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 5px;
+    min-height: 20px;
+}
+.result-card {
+    /* margin-top: 25px; */
+    padding: 25px;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border-radius: var(--border-radius);
+    border: 1px solid #e9ecef;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--dark-text);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: var(--transition);
+    display: none;
+}
+.result-card.show {
+    /* display: block; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    animation: fadeIn 0.5s ease;
+}
+.container-fraction-user{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.equal{
+    margin: 0 1rem;
+    /* padding-top: 26px; */
+}
+.result-card.success {
+    border-left: 4px solid var(--success-color);
+}
+.result-fraction {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.result-content{
+    display: flex;
+    justify-content: center;
+}
+.result-fraction span, .fraction-user span {
+    font-size: 24px;
+    font-weight: 700;
+}
+.result-fraction .fraction-bar {
+    margin: 8px 0;
+}
+.result-explanation {
+    font-size: 15px;
+    font-weight: normal;
+    color: var(--light-text);
+    margin-bottom: 15px;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@media (max-width: 480px) {
+    .fractions {
+        padding: 25px;
+    }
+    
+    .header h1 {
+        font-size: 24px;
+    }
+    
+    .fraction-input input {
+        font-size: 18px;
+        padding: 14px;
+    }
+}

@@ -1,4 +1,4 @@
-.message-user{
+.message-user, .message-error{
     color: red;
     font-weight: bold;
     font-size: 13px;

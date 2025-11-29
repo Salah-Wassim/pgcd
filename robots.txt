@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://pgcd.vercel.app/sitemap.xml
+Sitemap: https://swmath.vercel.app/sitemap.xml

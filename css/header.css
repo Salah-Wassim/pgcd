@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Schoolbell&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 .header{
     position: sticky;
@@ -28,22 +29,15 @@
     margin-left: 5px;
 }
 
-.title-header-container > h3{
-    font-family: 'Schoolbell', sans-serif;
-    font-weight: bold;
-    font-size: xx-large;
-}
-
 .avatar-header-container{
     display: flex;
     align-items: center;
-    width:44px;
+    width:180px;
     height: 44px;
 }
 
 .avatar-header{
     width:100%;
-    border-radius: 50%;
 }
 
 /*HEADER RIGHT*/
@@ -85,7 +79,7 @@
     cursor: pointer;
 }
 
-@media screen and (max-width: 700px){
+@media screen and (max-width: 791px){
     .header-content{
         display: block;
     }

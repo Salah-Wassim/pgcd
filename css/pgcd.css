@@ -1,0 +1,9 @@
+.index-content{
+    margin-left: 200px;
+}
+
+@media screen and (max-width: 940px){
+    .index-content{
+        margin-left: 0;
+    }
+}

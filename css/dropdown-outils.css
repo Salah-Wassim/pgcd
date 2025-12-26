@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Schoolbell&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+.dropdown-outils {
+  overflow: hidden;
+}
+
+.dropdown-outils .dropbtn-outils {
+  font-size: 1.2rem;
+  font-weight: 600;    
+  border: none;
+  outline: none;
+  color: black;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.dropdown-content-outils {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content-outils a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-outils:hover .dropdown-content-outils {
+  display: block;
+}
+
+@media screen and (max-width: 791px) {
+  .header-right-content.show .dropdown-outils {float: none;}
+  .header-right-content.show .dropdown-content-outils {position: relative; background-color: inherit;}
+  .header-right-content.show .dropdown-outils .dropbtn-outils {
+    display: block;
+    width: 100%;
+  }
+  .header-right-content.show .dropdown-outils a{
+     text-align: center;
+  }
+}

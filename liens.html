@@ -18,6 +18,7 @@
     </noscript>
     <link rel="stylesheet" href="css/liens.css">
     <link rel="stylesheet" href="css/titles.css">
+    <link rel="stylesheet" href="css/dropdown-outils.css">
     <link rel="website icon" type="png" href="assets/logo-swmath.PNG">
     <title>SWMATH - Liens</title>
 </head>
@@ -34,10 +35,18 @@
                     <button class="btn-burger fa-solid fa-bars"></button>
                 </div>
                 <div class="header-right-content">
-                    <a href="index.html">PGCD</a>
-                    <a href="fraction.html">Fractions</a>
-                    <a href="liens.html">Liens</a>
-                    <a href="a-propos.html">À propos</a>
+                    <a class="a-link-header" href="index.html#accueil">Accueil</a>
+                    <div class="dropdown-outils">
+                        <button class="dropbtn-outils">Outils 
+                          <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content-outils">
+                          <a href="pgcd.html">PGCD & PPCM</a>
+                          <a href="fraction.html">Fractions</a>
+                        </div>
+                    </div> 
+                    <a class="a-link-header" href="liens.html">Liens</a>
+                    <a class="a-link-header" href="index.html#apropos">À propos</a>
                 </div>
             </div>
         </header>

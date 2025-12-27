@@ -19,7 +19,7 @@ document.querySelector('#app').innerHTML = `
         <div class="feature-card">
           <div class="feature-icon">½</div>
           <h3>Simplification de fractions</h3>
-          <p>Simplifiez vos fractions en un clic et obtenez la forme irréductible. Simple et efficace</p>
+          <p>Simplifiez vos fractions en un clic et obtenez la forme irréductible. Simple et efficace.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">∑</div>

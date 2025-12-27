@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Schoolbell&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+.dropdown-outils {
+  overflow: hidden;
+}
+
+.dropdown-outils .dropbtn-outils {
+  font-size: 1.2rem;
+  font-weight: 600;    
+  border: none;
+  outline: none;
+  color: black;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.dropdown-content-outils {
+  display: none;
+  position: absolute;
+  background: #ffffff;
+  padding: 8px 0;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  min-width: 180px;
+  opacity: 0;
+  z-index: 1;
+}
+
+.dropdown-content-outils a {
+  display: block;
+  padding: 10px 16px;
+  font-size: 0.95rem;
+  color: #222;
+  text-decoration: none;
+  transition: background-color 0.2s ease, padding-left 0.2s ease;
+  text-align: left;
+}
+
+/* Hover lien */
+.dropdown-content-outils a:hover {
+  background:rgba(111, 66, 193, 0.05);;
+  padding-left: 20px;
+}
+
+.dropdown-outils:hover .dropdown-content-outils {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-outils:hover .dropdown-content-outils {
+  display: block;
+}
+
+.dropdown-outils:hover .dropbtn-outils i {
+  transform: rotate(180deg);
+}
+
+.dropbtn-outils:focus-visible {
+  outline: 2px solid #4f46e5;
+  border-radius: 6px;
+}
+
+@media screen and (max-width: 791px) {
+  .header-right-content.show .dropdown-outils {float: none;}
+  .header-right-content.show .dropdown-content-outils {position: relative; background-color: inherit; box-shadow: none; min-width: 100%;}
+  .header-right-content.show .dropdown-outils .dropbtn-outils {
+    display: block;
+    width: 100%;
+  }
+  .header-right-content.show .dropdown-outils a{
+     text-align: center;
+  }
+}

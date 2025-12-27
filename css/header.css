@@ -41,8 +41,11 @@
 }
 
 /*HEADER RIGHT*/
-
-.header-right-content > a{
+.header-right-content{
+    display: flex;
+    align-items: center;
+}
+.header-right-content > .a-link-header{
     color: #000;
     margin: 0 1rem;
     font-weight: 600;
@@ -52,7 +55,7 @@
     position: relative;
 }
 
-.header-right-content a::after {
+.header-right-content .a-link-header::after {
     content: '';
     position: absolute;
     left: 0;
@@ -63,7 +66,7 @@
     transition: width var(--transition-speed) ease;
 }
 
-.header-right-content a:hover::after {
+.header-right-content .a-link-header:hover::after {
     width: 100%;
 }
 
